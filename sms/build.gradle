@@ -1,0 +1,6 @@
+group 'org.lby.operations'
+version '1.0-SNAPSHOT'
+
+dependencies {
+    compile('org.codehaus.groovy:groovy:2.4.5', 'log4j:log4j:1.2.17','commons-dbutils:commons-dbutils:1.6','mysql:mysql-connector-java:5.1.37')
+}

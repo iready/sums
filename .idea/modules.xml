@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/sms/sms.iml" filepath="$PROJECT_DIR$/.idea/modules/sms/sms.iml" group="sms" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/sms/sms_main.iml" filepath="$PROJECT_DIR$/.idea/modules/sms/sms_main.iml" group="sms" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/sms/sms_test.iml" filepath="$PROJECT_DIR$/.idea/modules/sms/sms_test.iml" group="sms" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/sums.iml" filepath="$PROJECT_DIR$/.idea/modules/sums.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/sums_main.iml" filepath="$PROJECT_DIR$/.idea/modules/sums_main.iml" group="sums" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/sums_test.iml" filepath="$PROJECT_DIR$/.idea/modules/sums_test.iml" group="sums" />
+    </modules>
+  </component>
+</project>
