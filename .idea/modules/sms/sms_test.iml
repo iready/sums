@@ -14,6 +14,7 @@
     <orderEntry type="library" name="Gradle: org.codehaus.groovy:groovy:2.4.5" level="project" />
     <orderEntry type="library" name="Gradle: log4j:log4j:1.2.17" level="project" />
     <orderEntry type="library" name="Gradle: commons-dbutils:commons-dbutils:1.6" level="project" />
+    <orderEntry type="library" name="Gradle: mysql:mysql-connector-java:5.1.37" level="project" />
   </component>
   <component name="TestModuleProperties" production-module="sms_main" />
 </module>
