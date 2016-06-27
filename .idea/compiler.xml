@@ -19,6 +19,8 @@
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
+      <module name="Quick_monitor_main" target="1.7" />
+      <module name="Quick_monitor_test" target="1.7" />
       <module name="sms_main" target="1.7" />
       <module name="sms_test" target="1.7" />
       <module name="sums_main" target="1.7" />

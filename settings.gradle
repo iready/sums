@@ -1,3 +1,4 @@
 rootProject.name = 'sums'
 include 'sms'
+include 'Quick_monitor'
 
