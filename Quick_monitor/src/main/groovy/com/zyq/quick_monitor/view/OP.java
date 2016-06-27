@@ -8,12 +8,10 @@ import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-/**
- * Created by Administrator on 2016/6/24.
- */
 public class OP {
     private JButton add;
     private JPanel p;
+    private JTable table1;
 
     public OP() {
         add.addActionListener(new ActionListener() {
@@ -54,12 +52,15 @@ public class OP {
         gbc.gridy = 0;
         gbc.fill = GridBagConstraints.HORIZONTAL;
         p.add(spacer1, gbc);
-        final JPanel spacer2 = new JPanel();
+        final JScrollPane scrollPane1 = new JScrollPane();
         gbc = new GridBagConstraints();
         gbc.gridx = 0;
         gbc.gridy = 1;
-        gbc.fill = GridBagConstraints.VERTICAL;
-        p.add(spacer2, gbc);
+        gbc.gridwidth = 3;
+        gbc.fill = GridBagConstraints.BOTH;
+        p.add(scrollPane1, gbc);
+        table1 = new JTable();
+        scrollPane1.setViewportView(table1);
     }
 
     /**

@@ -18,35 +18,36 @@
       </component>
       <component id="71b58" class="javax.swing.JTextField" binding="t1">
         <constraints>
-          <grid row="0" column="2" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="0" use-parent-layout="false">
+          <grid row="0" column="2" row-span="1" col-span="2" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="0" use-parent-layout="false">
             <preferred-size width="150" height="-1"/>
           </grid>
           <gridbag weightx="0.0" weighty="0.0"/>
         </constraints>
         <properties>
-          <preferredSize width="200" height="20"/>
+          <preferredSize width="200" height="25"/>
         </properties>
       </component>
       <component id="80a2" class="javax.swing.JTextField" binding="t2">
         <constraints>
-          <grid row="1" column="2" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="0" use-parent-layout="false">
+          <grid row="1" column="2" row-span="1" col-span="2" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="0" use-parent-layout="false">
             <preferred-size width="150" height="-1"/>
           </grid>
           <gridbag weightx="0.0" weighty="0.0"/>
         </constraints>
         <properties>
-          <preferredSize width="200" height="20"/>
+          <preferredSize width="200" height="25"/>
+          <text value="Administrator"/>
         </properties>
       </component>
       <component id="82540" class="javax.swing.JTextField" binding="t3">
         <constraints>
-          <grid row="2" column="2" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="0" use-parent-layout="false">
+          <grid row="2" column="2" row-span="1" col-span="2" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="0" use-parent-layout="false">
             <preferred-size width="150" height="-1"/>
           </grid>
           <gridbag weightx="0.0" weighty="0.0"/>
         </constraints>
         <properties>
-          <preferredSize width="200" height="20"/>
+          <preferredSize width="200" height="25"/>
         </properties>
       </component>
       <component id="abcf5" class="javax.swing.JLabel" binding="p2">
@@ -67,9 +68,18 @@
           <text value="密码："/>
         </properties>
       </component>
+      <component id="2ea98" class="javax.swing.JButton" binding="back">
+        <constraints>
+          <grid row="3" column="3" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="4" fill="2" indent="0" use-parent-layout="false"/>
+          <gridbag weightx="0.0" weighty="0.0"/>
+        </constraints>
+        <properties>
+          <text value="返回"/>
+        </properties>
+      </component>
       <component id="e2357" class="javax.swing.JButton" binding="b1">
         <constraints>
-          <grid row="3" column="1" row-span="1" col-span="2" vsize-policy="0" hsize-policy="3" anchor="0" fill="2" indent="0" use-parent-layout="false"/>
+          <grid row="3" column="1" row-span="1" col-span="2" vsize-policy="0" hsize-policy="3" anchor="8" fill="2" indent="0" use-parent-layout="false"/>
           <gridbag weightx="0.0" weighty="0.0"/>
         </constraints>
         <properties>

@@ -15,7 +15,6 @@
  */
 package com.zyq.quick_monitor.common.plugin;
 
-import com.jfinal.ext.zyq.plugin.MongoKit;
 import com.jfinal.plugin.IPlugin;
 import com.mongodb.MongoClient;
 

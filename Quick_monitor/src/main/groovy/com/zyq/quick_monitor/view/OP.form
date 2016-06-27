@@ -22,12 +22,20 @@
           <gridbag weightx="0.0" weighty="0.0"/>
         </constraints>
       </hspacer>
-      <vspacer id="7f7d5">
+      <scrollpane id="679a8">
         <constraints>
-          <grid row="1" column="0" row-span="1" col-span="1" vsize-policy="6" hsize-policy="1" anchor="0" fill="2" indent="0" use-parent-layout="false"/>
+          <grid row="1" column="0" row-span="1" col-span="3" vsize-policy="7" hsize-policy="7" anchor="0" fill="3" indent="0" use-parent-layout="false"/>
           <gridbag weightx="0.0" weighty="0.0"/>
         </constraints>
-      </vspacer>
+        <properties/>
+        <border type="none"/>
+        <children>
+          <component id="82000" class="javax.swing.JTable" binding="table1" default-binding="true">
+            <constraints/>
+            <properties/>
+          </component>
+        </children>
+      </scrollpane>
     </children>
   </grid>
 </form>

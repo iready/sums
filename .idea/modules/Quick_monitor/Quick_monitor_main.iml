@@ -13,8 +13,11 @@
     <orderEntry type="library" name="Gradle: org.codehaus.groovy:groovy:2.4.5" level="project" />
     <orderEntry type="library" name="Gradle: log4j:log4j:1.2.17" level="project" />
     <orderEntry type="library" name="Gradle: com.jfinal:jfinal:2.2.5" level="project" />
+    <orderEntry type="library" name="Gradle: org.zyq.utils:core:0.54" level="project" />
     <orderEntry type="library" name="Gradle: org.mongodb:mongo-java-driver:3.2.2" level="project" />
     <orderEntry type="library" name="Gradle: org.zyq.utils:swing:0.398" level="project" />
+    <orderEntry type="library" name="Gradle: commons-collections:commons-collections:3.2.2" level="project" />
+    <orderEntry type="library" name="Gradle: commons-io:commons-io:2.3" level="project" />
     <orderEntry type="library" name="Gradle: beautyeye:beautyeye:3.0" level="project" />
     <orderEntry type="library" name="Gradle: cglib:cglib-nodep:3.1" level="project" />
   </component>
