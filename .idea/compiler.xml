@@ -19,6 +19,8 @@
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
+      <module name="conver_web_main" target="1.7" />
+      <module name="conver_web_test" target="1.7" />
       <module name="Quick_monitor_main" target="1.7" />
       <module name="Quick_monitor_test" target="1.7" />
       <module name="sms_main" target="1.7" />
