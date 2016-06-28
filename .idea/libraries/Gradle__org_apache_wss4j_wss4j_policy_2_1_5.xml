@@ -1,0 +1,11 @@
+<component name="libraryTable">
+  <library name="Gradle: org.apache.wss4j:wss4j-policy:2.1.5">
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.apache.wss4j/wss4j-policy/2.1.5/f8152283e6c99fba67a470d6836bec9248d172ee/wss4j-policy-2.1.5.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.apache.wss4j/wss4j-policy/2.1.5/db48f5b10af7c3152d39d7ffed9078a0fd98c64e/wss4j-policy-2.1.5-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

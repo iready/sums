@@ -1,0 +1,11 @@
+<component name="libraryTable">
+  <library name="Gradle: org.apache.wss4j:wss4j-bindings:2.1.5">
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.apache.wss4j/wss4j-bindings/2.1.5/4799fa73b9f90243f4298537540aee7987ba181c/wss4j-bindings-2.1.5.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.apache.wss4j/wss4j-bindings/2.1.5/f0b3c8e3c996272b078e1bc8c6edb2967b9207f0/wss4j-bindings-2.1.5-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>
