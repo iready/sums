@@ -7,7 +7,9 @@ import javax.jws.WebService;
  */
 @WebService
 public interface IConver {
-    void toPdf(String file_name, byte[] file);
 
-    void toSwf(String file_name, byte[] file);
+    void toPdf(String file_name, String file, String toMDD);
+
+    void toSwf(String file_name, String file, String mdd);
+
 }

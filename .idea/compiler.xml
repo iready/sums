@@ -27,6 +27,8 @@
       <module name="sms_test" target="1.7" />
       <module name="sums_main" target="1.7" />
       <module name="sums_test" target="1.7" />
+      <module name="web_auth_main" target="1.7" />
+      <module name="web_auth_test" target="1.7" />
     </bytecodeTargetLevel>
   </component>
 </project>

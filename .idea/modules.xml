@@ -14,6 +14,9 @@
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/sums.iml" filepath="$PROJECT_DIR$/.idea/modules/sums.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/sums_main.iml" filepath="$PROJECT_DIR$/.idea/modules/sums_main.iml" group="sums" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/sums_test.iml" filepath="$PROJECT_DIR$/.idea/modules/sums_test.iml" group="sums" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/web_auth/web_auth.iml" filepath="$PROJECT_DIR$/.idea/modules/web_auth/web_auth.iml" group="web_auth" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/web_auth/web_auth_main.iml" filepath="$PROJECT_DIR$/.idea/modules/web_auth/web_auth_main.iml" group="web_auth" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/web_auth/web_auth_test.iml" filepath="$PROJECT_DIR$/.idea/modules/web_auth/web_auth_test.iml" group="web_auth" />
     </modules>
   </component>
 </project>

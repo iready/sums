@@ -15,10 +15,7 @@
           <element id="library" level="project" name="Gradle: org.codehaus.groovy:groovy:2.4.5" />
           <element id="library" level="project" name="Gradle: log4j:log4j:1.2.17" />
           <element id="library" level="project" name="Gradle: com.jfinal:jfinal:2.2.5" />
-          <element id="library" level="project" name="Gradle: org.zyq.utils:http:0.1" />
-          <element id="library" level="project" name="Gradle: org.zyq.utils:conver:0.1" />
-          <element id="library" level="project" name="Gradle: org.zyq.utils:spirit:0.11" />
-          <element id="library" level="project" name="Gradle: com.alibaba:fastjson:1.2.7" />
+          <element id="library" level="project" name="Gradle: org.zyq.utils:conver:0.3" />
           <element id="library" level="project" name="Gradle: cos:cos:26Dec2008" />
           <element id="library" level="project" name="Gradle: org.web.s:servlet-api:1.0" />
           <element id="library" level="project" name="Gradle: org.web:jsp-api:1.0" />
@@ -30,9 +27,8 @@
           <element id="library" level="project" name="Gradle: org.apache.cxf:cxf-rt-frontend-jaxws:3.1.6" />
           <element id="library" level="project" name="Gradle: org.apache.cxf:cxf-rt-bindings-soap:3.1.6" />
           <element id="library" level="project" name="Gradle: org.apache.cxf:cxf-rt-transports-http:3.1.6" />
-          <element id="library" level="project" name="Gradle: org.jsoup:jsoup:1.8.3" />
-          <element id="library" level="project" name="Gradle: org.apache.httpcomponents:httpclient:4.4.1" />
           <element id="library" level="project" name="Gradle: jacob:jacob:1.6" />
+          <element id="library" level="project" name="Gradle: org.zyq.utils:core:0.56" />
           <element id="library" level="project" name="Gradle: commons-logging:commons-logging:1.2" />
           <element id="library" level="project" name="Gradle: org.springframework:spring-aop:4.2.5.RELEASE" />
           <element id="library" level="project" name="Gradle: org.springframework:spring-beans:4.2.5.RELEASE" />
@@ -51,7 +47,7 @@
           <element id="library" level="project" name="Gradle: org.apache.cxf:cxf-rt-ws-addr:3.1.6" />
           <element id="library" level="project" name="Gradle: org.apache.cxf:cxf-rt-wsdl:3.1.6" />
           <element id="library" level="project" name="Gradle: org.apache.cxf:cxf-rt-databinding-jaxb:3.1.6" />
-          <element id="library" level="project" name="Gradle: org.apache.httpcomponents:httpcore:4.4.1" />
+          <element id="library" level="project" name="Gradle: commons-io:commons-io:2.3" />
           <element id="library" level="project" name="Gradle: aopalliance:aopalliance:1.0" />
           <element id="library" level="project" name="Gradle: org.codehaus.woodstox:woodstox-core-asl:4.4.1" />
           <element id="library" level="project" name="Gradle: org.apache.ws.xmlschema:xmlschema-core:2.2.1" />
@@ -70,6 +66,7 @@
           <element id="library" level="project" name="Gradle: org.opensaml:opensaml-xacml-saml-impl:3.1.1" />
           <element id="library" level="project" name="Gradle: org.jasypt:jasypt:1.9.2" />
           <element id="library" level="project" name="Gradle: org.apache.geronimo.specs:geronimo-javamail_1.4_spec:1.7.1" />
+          <element id="library" level="project" name="Gradle: commons-codec:commons-codec:1.10" />
           <element id="library" level="project" name="Gradle: org.opensaml:opensaml-profile-api:3.1.1" />
           <element id="library" level="project" name="Gradle: org.opensaml:opensaml-saml-api:3.1.1" />
           <element id="library" level="project" name="Gradle: org.opensaml:opensaml-security-impl:3.1.1" />
@@ -87,16 +84,15 @@
           <element id="library" level="project" name="Gradle: org.opensaml:opensaml-storage-api:3.1.1" />
           <element id="library" level="project" name="Gradle: org.opensaml:opensaml-soap-impl:3.1.1" />
           <element id="library" level="project" name="Gradle: org.apache.velocity:velocity:1.7" />
+          <element id="library" level="project" name="Gradle: org.apache.httpcomponents:httpclient:4.3.6" />
           <element id="library" level="project" name="Gradle: org.opensaml:opensaml-messaging-api:3.1.1" />
           <element id="library" level="project" name="Gradle: org.cryptacular:cryptacular:1.0" />
           <element id="library" level="project" name="Gradle: org.bouncycastle:bcprov-jdk15on:1.51" />
           <element id="library" level="project" name="Gradle: commons-collections:commons-collections:3.2.1" />
           <element id="library" level="project" name="Gradle: commons-lang:commons-lang:2.4" />
-          <element id="library" level="project" name="Gradle: org.zyq.utils:core:0.54" />
-          <element id="library" level="project" name="Gradle: commons-io:commons-io:2.3" />
+          <element id="library" level="project" name="Gradle: org.apache.httpcomponents:httpcore:4.3.3" />
           <element id="library" level="project" name="Gradle: org.slf4j:slf4j-api:1.7.14" />
           <element id="library" level="project" name="Gradle: javax.xml.stream:stax-api:1.0-2" />
-          <element id="library" level="project" name="Gradle: commons-codec:commons-codec:1.10" />
         </element>
       </element>
       <element id="directory" name="META-INF">

@@ -5,7 +5,8 @@ apply plugin: 'java'
 apply plugin: 'war'
 
 dependencies {
-    compile 'com.jfinal:jfinal:2.2.5', 'org.zyq.utils:http:0.1', 'org.zyq.utils:conver:0.1', 'org.zyq.utils:spirit:0.11'//开发版
-//    compile 'cos:cos:26Dec2008', 'org.web.s:servlet-api:1.0', 'org.web:jsp-api:1.0', 'standard:standard:standard'
-//    compile 'org.springframework:spring-core:4.2.5.RELEASE', 'org.springframework:spring-context:4.2.5.RELEASE', 'org.springframework:spring-web:4.2.5.RELEASE', 'org.apache.cxf:cxf-rt-ws-security:3.1.6', 'org.apache.cxf:cxf-rt-frontend-jaxws:3.1.6', 'org.apache.cxf:cxf-rt-bindings-soap:3.1.6', 'org.apache.cxf:cxf-rt-transports-http:3.1.6'
+    compile 'com.jfinal:jfinal:2.2.5', 'org.zyq.utils:conver:0.3'
+//    , 'org.zyq.utils:http:0.1',, 'org.zyq.utils:spirit:0.11'//开发版
+    compile 'cos:cos:26Dec2008', 'org.web.s:servlet-api:1.0', 'org.web:jsp-api:1.0', 'standard:standard:standard'
+    compile 'org.springframework:spring-core:4.2.5.RELEASE', 'org.springframework:spring-context:4.2.5.RELEASE', 'org.springframework:spring-web:4.2.5.RELEASE', 'org.apache.cxf:cxf-rt-ws-security:3.1.6', 'org.apache.cxf:cxf-rt-frontend-jaxws:3.1.6', 'org.apache.cxf:cxf-rt-bindings-soap:3.1.6', 'org.apache.cxf:cxf-rt-transports-http:3.1.6'
 }

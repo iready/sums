@@ -2,4 +2,5 @@ rootProject.name = 'sums'
 include 'sms'
 include 'Quick_monitor'
 include 'conver_web'
+include 'web_auth'
 
