@@ -3,9 +3,12 @@ package org.lby.kq.common;
 import com.jfinal.config.*;
 import com.jfinal.kit.Prop;
 import com.jfinal.kit.PropKit;
+import com.jfinal.plugin.activerecord.ActiveRecordPlugin;
+import com.jfinal.plugin.activerecord.ModelRecordElResolver;
 import com.jfinal.plugin.druid.DruidPlugin;
 import com.jfinal.render.ViewType;
 import org.apache.log4j.BasicConfigurator;
+import org.lby.kq.model._MappingKit;
 import org.lby.kq.route.Conf;
 import org.lby.kq.route.Index;
 
@@ -44,7 +47,10 @@ public class Config extends JFinalConfig {
 
 
     public void configPlugin(Plugins plugins) {
-
+        DruidPlugin druidPlugin = getKaoQingPlugin();
+        ActiveRecordPlugin activeRecordPlugin = new ActiveRecordPlugin(druidPlugin).setShowSql(true);
+        _MappingKit.mapping(activeRecordPlugin);
+        plugins.add(druidPlugin).add(activeRecordPlugin);
     }
 
 
@@ -55,5 +61,11 @@ public class Config extends JFinalConfig {
 
     public void configHandler(Handlers handlers) {
 
+    }
+
+    @Override
+    public void afterJFinalStart() {
+        super.afterJFinalStart();
+        ModelRecordElResolver.setResolveBeanAsModel(true);
     }
 }

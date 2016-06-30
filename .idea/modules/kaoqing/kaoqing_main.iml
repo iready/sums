@@ -3,6 +3,9 @@
   <component name="FacetManager">
     <facet type="web" name="Web Gradle : kaoqing-0.1.war">
       <configuration>
+        <descriptors>
+          <deploymentDescriptor name="web.xml" url="file://$MODULE_DIR$/../../../kaoqing/src/main/webapp/WEB-INF/web.xml" />
+        </descriptors>
         <webroots>
           <root url="file://$MODULE_DIR$/../../../kaoqing/src/main/webapp" relative="/" />
         </webroots>
@@ -29,8 +32,11 @@
     <orderEntry type="library" name="Gradle: mysql:mysql-connector-java:5.1.37" level="project" />
     <orderEntry type="library" name="Gradle: com.alibaba:druid:1.0.16" level="project" />
     <orderEntry type="library" name="Gradle: org.apache.commons:commons-lang3:3.1" level="project" />
+    <orderEntry type="library" name="Gradle: org.jasig.cas.client:cas-client-core:3.2.1" level="project" />
     <orderEntry type="library" name="Gradle: jacob:jacob:1.6" level="project" />
     <orderEntry type="library" name="Gradle: org.zyq.utils:core:0.56" level="project" />
+    <orderEntry type="library" name="Gradle: commons-logging:commons-logging:1.1" level="project" />
     <orderEntry type="library" name="Gradle: commons-io:commons-io:2.3" level="project" />
+    <orderEntry type="library" name="Gradle: javax.servlet:servlet-api:2.3" level="project" />
   </component>
 </module>

@@ -16,15 +16,18 @@
           <element id="library" level="project" name="Gradle: log4j:log4j:1.2.17" />
           <element id="library" level="project" name="Gradle: com.jfinal:jfinal:2.2.5" />
           <element id="library" level="project" name="Gradle: org.zyq.utils:conver:0.3" />
+          <element id="library" level="project" name="Gradle: jstl:jstl:jstl" />
+          <element id="library" level="project" name="Gradle: javax.el:javax.el-api:3.0.0" />
+          <element id="library" level="project" name="Gradle: com.alibaba:fastjson:1.2.7" />
+          <element id="library" level="project" name="Gradle: mysql:mysql-connector-java:5.1.37" />
+          <element id="library" level="project" name="Gradle: com.alibaba:druid:1.0.16" />
+          <element id="library" level="project" name="Gradle: org.apache.commons:commons-lang3:3.1" />
           <element id="library" level="project" name="Gradle: jacob:jacob:1.6" />
           <element id="library" level="project" name="Gradle: org.zyq.utils:core:0.56" />
           <element id="library" level="project" name="Gradle: commons-io:commons-io:2.3" />
-          <element id="library" level="project" name="Gradle: com.alibaba:fastjson:1.2.7" />
-          <element id="library" level="project" name="Gradle: mysql:mysql-connector-java:5.1.37" />
-          <element id="file-copy" path="$USER_HOME$/.gradle/caches/modules-2/files-2.1/jstl/jstl/jstl/3375e43c620df4f1114959400ff9bb90d12a2feb/jstl-jstl.jar" />
-          <element id="file-copy" path="$USER_HOME$/.gradle/caches/modules-2/files-2.1/javax.el/javax.el-api/3.0.0/60a59edc89f93d57541da31ee1c83428ab1cdcb3/javax.el-api-3.0.0.jar" />
-          <element id="file-copy" path="$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.alibaba/druid/1.0.16/71043e220d4a2187848a9ee05cc6ac56c8023929/druid-1.0.16.jar" />
-          <element id="file-copy" path="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.apache.commons/commons-lang3/3.1/905075e6c80f206bbe6cf1e809d2caa69f420c76/commons-lang3-3.1.jar" />
+          <element id="file-copy" path="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.jasig.cas.client/cas-client-core/3.2.1/bf2f90f68a37a80ee4b3a210e9aa23a22e2c9da8/cas-client-core-3.2.1.jar" />
+          <element id="file-copy" path="$USER_HOME$/.gradle/caches/modules-2/files-2.1/commons-logging/commons-logging/1.1/ba24d5de831911b684c92cd289ed5ff826271824/commons-logging-1.1.jar" />
+          <element id="file-copy" path="$USER_HOME$/.gradle/caches/modules-2/files-2.1/javax.servlet/servlet-api/2.3/137a24e9f62973f01f16dd23fc1b5a9964fd9ef/servlet-api-2.3.jar" />
         </element>
       </element>
       <element id="directory" name="META-INF">
