@@ -8,6 +8,9 @@
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/conver_web/conver_web.iml" filepath="$PROJECT_DIR$/.idea/modules/conver_web/conver_web.iml" group="conver_web" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/conver_web/conver_web_main.iml" filepath="$PROJECT_DIR$/.idea/modules/conver_web/conver_web_main.iml" group="conver_web" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/conver_web/conver_web_test.iml" filepath="$PROJECT_DIR$/.idea/modules/conver_web/conver_web_test.iml" group="conver_web" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/kaoqing/kaoqing.iml" filepath="$PROJECT_DIR$/.idea/modules/kaoqing/kaoqing.iml" group="kaoqing" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/kaoqing/kaoqing_main.iml" filepath="$PROJECT_DIR$/.idea/modules/kaoqing/kaoqing_main.iml" group="kaoqing" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/kaoqing/kaoqing_test.iml" filepath="$PROJECT_DIR$/.idea/modules/kaoqing/kaoqing_test.iml" group="kaoqing" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/sms/sms.iml" filepath="$PROJECT_DIR$/.idea/modules/sms/sms.iml" group="sms" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/sms/sms_main.iml" filepath="$PROJECT_DIR$/.idea/modules/sms/sms_main.iml" group="sms" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/sms/sms_test.iml" filepath="$PROJECT_DIR$/.idea/modules/sms/sms_test.iml" group="sms" />
