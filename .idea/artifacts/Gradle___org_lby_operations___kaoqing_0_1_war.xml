@@ -22,12 +22,16 @@
           <element id="library" level="project" name="Gradle: mysql:mysql-connector-java:5.1.37" />
           <element id="library" level="project" name="Gradle: com.alibaba:druid:1.0.16" />
           <element id="library" level="project" name="Gradle: org.apache.commons:commons-lang3:3.1" />
+          <element id="library" level="project" name="Gradle: org.jasig.cas.client:cas-client-core:3.2.1" />
           <element id="library" level="project" name="Gradle: jacob:jacob:1.6" />
           <element id="library" level="project" name="Gradle: org.zyq.utils:core:0.56" />
+          <element id="library" level="project" name="Gradle: commons-logging:commons-logging:1.1" />
           <element id="library" level="project" name="Gradle: commons-io:commons-io:2.3" />
-          <element id="file-copy" path="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.jasig.cas.client/cas-client-core/3.2.1/bf2f90f68a37a80ee4b3a210e9aa23a22e2c9da8/cas-client-core-3.2.1.jar" />
-          <element id="file-copy" path="$USER_HOME$/.gradle/caches/modules-2/files-2.1/commons-logging/commons-logging/1.1/ba24d5de831911b684c92cd289ed5ff826271824/commons-logging-1.1.jar" />
-          <element id="file-copy" path="$USER_HOME$/.gradle/caches/modules-2/files-2.1/javax.servlet/servlet-api/2.3/137a24e9f62973f01f16dd23fc1b5a9964fd9ef/servlet-api-2.3.jar" />
+          <element id="library" level="project" name="Gradle: javax.servlet:servlet-api:2.3" />
+          <element id="library" level="project" name="Gradle: cos:cos:26Dec2008" />
+          <element id="library" level="project" name="Gradle: org.web.s:servlet-api:1.0" />
+          <element id="library" level="project" name="Gradle: org.web:jsp-api:1.0" />
+          <element id="library" level="project" name="Gradle: standard:standard:standard" />
         </element>
       </element>
       <element id="directory" name="META-INF">

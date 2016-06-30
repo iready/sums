@@ -33,6 +33,10 @@
     <orderEntry type="library" name="Gradle: com.alibaba:druid:1.0.16" level="project" />
     <orderEntry type="library" name="Gradle: org.apache.commons:commons-lang3:3.1" level="project" />
     <orderEntry type="library" name="Gradle: org.jasig.cas.client:cas-client-core:3.2.1" level="project" />
+    <orderEntry type="library" name="Gradle: cos:cos:26Dec2008" level="project" />
+    <orderEntry type="library" name="Gradle: org.web.s:servlet-api:1.0" level="project" />
+    <orderEntry type="library" name="Gradle: org.web:jsp-api:1.0" level="project" />
+    <orderEntry type="library" name="Gradle: standard:standard:standard" level="project" />
     <orderEntry type="library" name="Gradle: jacob:jacob:1.6" level="project" />
     <orderEntry type="library" name="Gradle: org.zyq.utils:core:0.56" level="project" />
     <orderEntry type="library" name="Gradle: commons-logging:commons-logging:1.1" level="project" />

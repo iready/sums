@@ -12,9 +12,6 @@ import org.lby.kq.model._MappingKit;
 import org.lby.kq.route.Conf;
 import org.lby.kq.route.Index;
 
-/**
- * Created by Administrator on 2016/6/30.
- */
 public class Config extends JFinalConfig {
     static Prop prop = null;
 
