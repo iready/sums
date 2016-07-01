@@ -25,9 +25,8 @@
                     <div class="panel-head">
                         <strong>配置参数</strong>
                         <div style="float:right;margin:-8px 3px 0px 0px">
-                            <button class="button bg-green">快速应用设置</button>
-                            <a class="button" href="/config/view_list">返回</a>
-                            <button class="button bg-sub">保存</button>
+                            <button class="fadein-left button bg-green">快速应用设置</button>
+                            <button class="button bg-sub fadein-right">保存</button>
                         </div>
                     </div>
                     <div class="panel-body">
@@ -40,10 +39,6 @@
                                     <div class="form-group">
                                         <strong>当前配置名字</strong>
                                         <input type="text" name="c.confName" id="confName" size="20"/>
-                                    </div>
-                                    <div class="form-group">
-                                        <strong>规则所属法院</strong>
-                                        <input name="ssfy" value="KOO"/>
                                     </div>
                                 </div>
                             </div>

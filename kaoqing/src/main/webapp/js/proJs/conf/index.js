@@ -42,6 +42,5 @@ define(function (require, exports, module) {
                 $('#' + json_form[i][1]).val(arr_temp[1]);
             }
         }
-        console.log(json)
     };
 });
