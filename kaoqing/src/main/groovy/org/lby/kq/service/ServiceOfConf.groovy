@@ -14,5 +14,4 @@ class ServiceOfConf {
         }
         return records;
     }
-
 }
