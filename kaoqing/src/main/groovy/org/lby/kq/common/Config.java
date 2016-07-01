@@ -7,7 +7,8 @@ import com.jfinal.plugin.activerecord.ActiveRecordPlugin;
 import com.jfinal.plugin.activerecord.ModelRecordElResolver;
 import com.jfinal.plugin.druid.DruidPlugin;
 import com.jfinal.render.ViewType;
-import org.apache.log4j.BasicConfigurator;
+import org.lby.kq.model.Dept;
+import org.lby.kq.model.User;
 import org.lby.kq.model._MappingKit;
 import org.lby.kq.route.Conf;
 import org.lby.kq.route.Index;
@@ -27,6 +28,9 @@ public class Config extends JFinalConfig {
         return druidFactory(new DruidPlugin(PropKit.get("kq_url"), PropKit.get("kq_user"), PropKit.get("kq_pas")));
     }
 
+    public static DruidPlugin getBasePlugin() {
+        return druidFactory(new DruidPlugin(PropKit.get("base_url"), PropKit.get("base_user"), PropKit.get("base_pas")));
+    }
 
     public void configConstant(Constants constants) {
         constants.setEncoding("utf-8");
@@ -44,10 +48,19 @@ public class Config extends JFinalConfig {
 
 
     public void configPlugin(Plugins plugins) {
-        DruidPlugin druidPlugin = getKaoQingPlugin();
-        ActiveRecordPlugin activeRecordPlugin = new ActiveRecordPlugin(druidPlugin).setShowSql(true);
-        _MappingKit.mapping(activeRecordPlugin);
-        plugins.add(druidPlugin).add(activeRecordPlugin);
+        {/*本项目配置*/
+            DruidPlugin dkq = getKaoQingPlugin();
+            ActiveRecordPlugin ar_kq = new ActiveRecordPlugin(dkq).setShowSql(true);
+            _MappingKit.mapping(ar_kq);
+            plugins.add(dkq).add(ar_kq);
+        }
+        {/*6.23配置*/
+            DruidPlugin druidPlugin23 = getBasePlugin();
+            ActiveRecordPlugin ar23 = new ActiveRecordPlugin(SysVar.BASE, druidPlugin23).setShowSql(true);
+            ar23.addMapping(User.TABLE_NAME, "userId", User.class);
+            ar23.addMapping(Dept.TABLE_NAME, "orgId", Dept.class);
+            plugins.add(druidPlugin23).add(ar23);
+        }
     }
 
 

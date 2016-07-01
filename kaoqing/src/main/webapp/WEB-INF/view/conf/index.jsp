@@ -7,6 +7,10 @@
     <script type="text/javascript">
         seajs.use('proJs/conf/index', function (v) {
             v.init();
+            try {
+                if (${isEdit})v.edit_init(${c});
+            } catch (e) {
+            }
         })
     </script>
 </head>
@@ -17,16 +21,33 @@
         <div class="x12">
             <div class="panel" style="margin-right: 5px;">
                 <form action="/config/save" class="form" id="configform" method="post">
+                    <input name="c.id" type="hidden">
                     <div class="panel-head">
                         <strong>配置参数</strong>
                         <div style="float:right;margin:-8px 3px 0px 0px">
                             <button class="button bg-green">快速应用设置</button>
+                            <a class="button" href="/config/view_list">返回</a>
                             <button class="button bg-sub">保存</button>
                         </div>
                     </div>
                     <div class="panel-body">
                         <div class="collapse-toggle">
                             <div class="panel active">
+                                <div class="panel-head">
+                                    <h4>配置属性</h4>
+                                </div>
+                                <div class="panel-body">
+                                    <div class="form-group">
+                                        <strong>当前配置名字</strong>
+                                        <input type="text" name="c.confName" id="confName" size="20"/>
+                                    </div>
+                                    <div class="form-group">
+                                        <strong>规则所属法院</strong>
+                                        <input name="ssfy" value="KOO"/>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="panel">
                                 <div class="panel-head">
                                     <h4>上下班时间设定</h4>
                                 </div>
@@ -101,10 +122,6 @@
                                     </div>
                                 </div>
                             </div>
-                        </div>
-                        <div class="form-group">
-                            <strong>规则所属法院</strong>
-                            <input name="ssfy" value="KOO"/>
                         </div>
                     </div>
                     <div style="display:none" id="con"></div>

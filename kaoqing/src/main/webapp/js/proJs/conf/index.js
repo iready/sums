@@ -9,7 +9,8 @@ define(function (require, exports, module) {
         fourth: ['fourth_1', 'fourth_2'],
         sb: ['after_sb', 'before_sb'],
         xb: ['after_xb', 'before_xb'],
-        hc: ['hc_sb', 'hc_xb']
+        hc: ['hc_sb', 'hc_xb'],
+        sx: ['confName']
     };
     exports.init = function () {
         // 吊炸天脚本渲染
@@ -30,5 +31,17 @@ define(function (require, exports, module) {
             }
             return true;
         });
-    }
+    };
+    exports.edit_init = function (json) {
+        for (var i in json) {
+            if ($.inArray(i, arr_dk) == -1) {
+                $('input[name="c.' + i + '"]').val(json[i]);
+            } else {
+                var arr_temp = json[i].split(":");
+                $('#' + json_form[i][0]).val(arr_temp[0]);
+                $('#' + json_form[i][1]).val(arr_temp[1]);
+            }
+        }
+        console.log(json)
+    };
 });

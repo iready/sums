@@ -4,6 +4,7 @@ import com.jfinal.aop.Interceptor;
 import com.jfinal.aop.Invocation;
 import com.jfinal.core.Controller;
 import org.jasig.cas.client.authentication.AttributePrincipal;
+import org.lby.kq.model.User;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
@@ -21,10 +22,9 @@ public class LoginInterceptor implements Interceptor, SysVar {
                 AttributePrincipal principal = (AttributePrincipal) request.getUserPrincipal();
                 if (principal != null && principal.getName() != null) {
                     String email = principal.getName();
+                    User user = User.dao.queryByEmail(email);
                     session.setAttribute(EMAIL, email);
-//					User user = User.dao.queryByEmail(email);
-//					session.setAttribute(EMAIL, email);
-//					session.setAttribute(USER_NAME, user.getStr("XM"));
+                    session.setAttribute(USER_NAME, user.getStr("XM"));
 //					session.setAttribute(USER_ID, user.getInt("userId"));
 //					session.setAttribute(DEPT_ID, user.getInt("orgId"));
 //					session.setAttribute(FY, user.getStr("FY"));

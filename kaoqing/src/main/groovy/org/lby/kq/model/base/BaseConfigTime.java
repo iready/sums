@@ -118,4 +118,22 @@ public abstract class BaseConfigTime<M extends BaseConfigTime<M>> extends Model<
 		return get("provider");
 	}
 
+	public M setConfName(java.lang.String confName) {
+		set("confName", confName);
+	return (M)this;
+}
+
+	public java.lang.String getConfName() {
+		return get("confName");
+	}
+
+	public M setCreateTime(java.util.Date createTime) {
+		set("createTime", createTime);
+	return (M)this;
+}
+
+	public java.util.Date getCreateTime() {
+		return get("createTime");
+	}
+
 }

@@ -1,5 +1,7 @@
 package org.lby.kq.model;
 
+import com.jfinal.plugin.activerecord.Db;
+import com.jfinal.plugin.activerecord.Record;
 import org.lby.kq.model.base.BaseConfigTime;
 
 import java.util.List;
@@ -14,7 +16,7 @@ public class ConfigTime extends BaseConfigTime<ConfigTime> {
     /**
      * @param email
      */
-    public List<ConfigTime> find_by_email(String email) {
-        return find("select * from " + TABLENAME + " where provider=?", email);
+    public List<Record> find_by_email(String email) {
+        return Db.find("select * from " + TABLENAME + " where provider=? order by createTime desc", email);
     }
 }
