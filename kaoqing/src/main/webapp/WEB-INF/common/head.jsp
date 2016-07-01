@@ -1,11 +1,14 @@
 <%@ page import="org.lby.kq.common.SysVar" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <title>考勤系统</title>
-<link rel="stylesheet" href="<%=SysVar.sys_In%>/js/pintuer_model/pintuer.css" type="text/css"/>
+<link  rel="stylesheet" href="/js/pinture.css"/>
+<%--<link rel="stylesheet" href="<%=SysVar.sys_pq%>/js/pintuer_model/pintuer.css" type="text/css"/>--%>
 <script type="text/javascript" src="<%=SysVar.sys_In%>/jquery/jquery.min.js"></script>
-<script type="text/javascript" src="<%=SysVar.sys_In%>/js/pintuer_model/pintuer.js"></script>
+<%--<script type="text/javascript" src="<%=SysVar.sys_pq%>/js/pintuer_model/pintuer.js"></script>--%>
+<script type="text/javascript" src="/js/pintuer.js"></script>
+<script type="text/javascript" src="/js/sea.js"></script>
 <script type="text/javascript">
-    var sys_pq = '';//排期地址
+    var sys_pq = '<%=SysVar.sys_pq%>';//排期地址
     var sys_In = '<%=SysVar.sys_In%>';//接口地址
     seajs.config({
         alias: {
@@ -16,7 +19,7 @@
             "laydate": "/js/common/laydate/laydate",
             "jform": "/js/common/base/jquery.form.min",
             "base64": "/js/common/base/jquery.base64",
-            "tbuild": "/js/project_model/tableBuild",
+            "build": "/js/$build",
             "qutils": "/js/project_model/zyq/utils",
             "echat": "/js/common/echarts.min"
         },

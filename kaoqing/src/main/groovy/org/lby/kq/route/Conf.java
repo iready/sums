@@ -6,4 +6,8 @@ public class Conf extends Controller {
     public void index() {
 
     }
+
+    public void save() {
+    }
+
 }
