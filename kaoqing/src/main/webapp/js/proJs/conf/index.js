@@ -22,13 +22,13 @@ define(function (require, exports, module) {
             // 先假设全部验证通过
 
             // 取值操作
-            var div_con = $('#con');
+            var div_con = $('#con').empty();
             for (var i in arr_dk) {
                 var t1 = json_form[arr_dk[i]][0];
                 var t2 = json_form[arr_dk[i]][1];
-                div_con.append(b.new_hi($('#' + t1).val() + ':' + $('#' + t2).val()).attr('name', arr_dk[i]));
+                div_con.append(b.new_hi($('#' + t1).val() + ':' + $('#' + t2).val() + ':59').attr('name', 'c.' + arr_dk[i]));
             }
-            return false;
+            return true;
         });
     }
 });

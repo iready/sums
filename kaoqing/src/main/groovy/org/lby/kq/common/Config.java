@@ -33,12 +33,12 @@ public class Config extends JFinalConfig {
         constants.setDevMode(false);
         constants.setViewType(ViewType.JSP);
         constants.setBaseViewPath("/WEB-INF/view");
-        BasicConfigurator.configure();
+//        BasicConfigurator.configure();
     }
 
 
     public void configRoute(Routes routes) {
-        routes.add("/", Index.class);
+        routes.add("/", Index.class, "/index");
         routes.add("/config", Conf.class, "/conf");
     }
 
@@ -52,7 +52,7 @@ public class Config extends JFinalConfig {
 
 
     public void configInterceptor(Interceptors interceptors) {
-
+        interceptors.add(new LoginInterceptor());
     }
 
 

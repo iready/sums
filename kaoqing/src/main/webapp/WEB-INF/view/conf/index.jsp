@@ -64,22 +64,22 @@
                                 <div class="panel-body form-x">
                                     <div class="form-group ">
                                         <strong>上班前</strong>
-                                        <input type="text" id="after_sb" size="5"/>
+                                        <input type="text" id="before_sb" name="c.beforeSb" size="5"/>
                                         <strong>分钟可打卡</strong>
                                     </div>
                                     <div class="form-group ">
                                         <strong>上班后</strong>
-                                        <input type="text" id="before_sb" size="5"/>
+                                        <input type="text" id="after_sb" name="c.afterSb" size="5"/>
                                         <strong>分钟可打卡</strong>
                                     </div>
                                     <div class="form-group ">
                                         <strong>下班前</strong>
-                                        <input type="text" id="after_xb" size="5"/>
+                                        <input type="text" id="before_xb" name="c.beforeXb" size="5"/>
                                         <strong>分钟可打卡</strong>
                                     </div>
                                     <div class="form-group ">
                                         <strong>下班后</strong>
-                                        <input type="text" id="before_xb" size="5"/>
+                                        <input type="text" id="after_xb" name="c.afterXb" size="5"/>
                                         <strong>分钟可打卡</strong>
                                     </div>
                                 </div>
@@ -91,12 +91,12 @@
                                 <div class="panel-body">
                                     <div class="form-group ">
                                         <strong>上班后</strong>
-                                        <input type="text" id="hc_sb" size="5"/>
+                                        <input type="text" name="c.hcSb" id="hc_sb" size="5"/>
                                         <strong>分钟打卡不算迟到</strong>
                                     </div>
                                     <div class="form-group ">
                                         <strong>下班前</strong>
-                                        <input type="text" id="hc_xb" size="5"/>
+                                        <input type="text" name="c.hcXb" id="hc_xb" size="5"/>
                                         <strong>分钟打卡不算早退</strong>
                                     </div>
                                 </div>
