@@ -1,10 +1,11 @@
+<%@ page import="org.lby.kq.common.SysVar" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
-    <link href="/js/layer/skin/layer.css"/>
     <jsp:include page="/WEB-INF/common/head.jsp"/>
-    <script src="/js/layer/layer.js"></script>
+    <link rel="stylesheet" href="<%=SysVar.sys_In%>/js/layer/skin/layer.css"/>
+    <script src="<%=SysVar.sys_In%>/js/layer/layer.js"></script>
     <script type="text/javascript">
         function delete_(s) {
             if (window.confirm("确定删除吗")) {
@@ -31,8 +32,6 @@
 <div class="container">
     <div class="line">
         <a href="/config" class="fadein-top button bg-blue">添加</a>
-        <button id="pz_fy" class="button fadein-bottom">配置应用于法院</button>
-        <button id="pz_bm" class="button fadein-top">配置应用于部门</button>
     </div>
     <hr class="bg-gray"/>
     <table class="table ">

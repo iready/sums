@@ -1,14 +1,16 @@
 package org.lby.kq.route;
 
+import com.jfinal.aop.Before;
 import com.jfinal.core.Controller;
 import com.jfinal.kit.JsonKit;
+import org.lby.kq.aop.Aop_Conf;
 import org.lby.kq.common.SysVar;
 import org.lby.kq.model.ConfigTime;
 import org.lby.kq.service.ServiceOfConf;
 
 import java.util.Date;
 import java.util.UUID;
-
+@Before(value = Aop_Conf.class)
 public class Conf extends Controller implements SysVar {
     public void index() {
         setAttr("isEdit", false);
