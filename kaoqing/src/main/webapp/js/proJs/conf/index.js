@@ -1,5 +1,6 @@
 define(function (require, exports, module) {
     var b = require('build');
+    require('suser');
     var arr_dk = ['first', 'second', 'third', 'fourth'];
     var arr_class = ['input input-auto text-center'];
     var json_form = {
@@ -19,6 +20,36 @@ define(function (require, exports, module) {
                 $('#' + json_form[i][ii]).addClass(arr_class[0]);
             }
         }
+        $('#radio_fy').click(function () {
+            var c_ = $('#choose_').unbind('click').show(), h_ = $('#show_v'), panel_b = $('#show_div .panel-body').empty(), panel_show_div = $('#show_div').hide();
+            $.openSelect(c_, {
+                fy: {
+                    hideSelect: "#hide_v",
+                    showSelect: "#show_v",
+                    hideType: "fy",
+                    showType: "name",
+                    selectedMulti: true,
+                }, onEnd: function () {
+                    panel_b.text(arguments[1]);
+                    panel_show_div.fadeIn();
+                }
+            });
+        });
+        $('#radio_dept').click(function () {
+            var c_ = $('#choose_').unbind('click').show(), h_ = $('#show_v'), panel_b = $('#show_div .panel-body').empty(), panel_show_div = $('#show_div').hide();
+            $.openSelect(c_, {
+                dept: {
+                    hideSelect: "#hide_v",
+                    showSelect: "#show_v",
+                    hideType: "id",
+                    showType: "name",
+                    selectedMulti: true,
+                }, onEnd: function () {
+                    panel_b.text(arguments[1]);
+                    panel_show_div.fadeIn();
+                }
+            });
+        });
         $('#configform').submit(function () {
             // 先假设全部验证通过
 

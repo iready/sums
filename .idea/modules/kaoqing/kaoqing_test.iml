@@ -13,8 +13,9 @@
     <orderEntry type="module" module-name="kaoqing_main" />
     <orderEntry type="library" name="Gradle: org.codehaus.groovy:groovy:2.4.5" level="project" />
     <orderEntry type="library" name="Gradle: log4j:log4j:1.2.17" level="project" />
-    <orderEntry type="library" name="Gradle: com.jfinal:jfinal:2.2.5" level="project" />
+    <orderEntry type="library" name="Gradle: com.jfinal:jfinal:2.2.6" level="project" />
     <orderEntry type="library" name="Gradle: org.zyq.utils:conver:0.3" level="project" />
+    <orderEntry type="library" name="Gradle: org.zyq.utils:core:0.57" level="project" />
     <orderEntry type="library" name="Gradle: jstl:jstl:jstl" level="project" />
     <orderEntry type="library" name="Gradle: javax.el:javax.el-api:3.0.0" level="project" />
     <orderEntry type="library" name="Gradle: com.alibaba:fastjson:1.2.7" level="project" />
@@ -26,13 +27,10 @@
     <orderEntry type="library" name="Gradle: org.web.s:servlet-api:1.0" level="project" />
     <orderEntry type="library" name="Gradle: org.web:jsp-api:1.0" level="project" />
     <orderEntry type="library" name="Gradle: standard:standard:standard" level="project" />
-    <orderEntry type="library" name="Gradle: junit:junit:4.11" level="project" />
     <orderEntry type="library" name="Gradle: jacob:jacob:1.6" level="project" />
-    <orderEntry type="library" name="Gradle: org.zyq.utils:core:0.56" level="project" />
     <orderEntry type="library" name="Gradle: commons-logging:commons-logging:1.1" level="project" />
-    <orderEntry type="library" name="Gradle: org.hamcrest:hamcrest-core:1.3" level="project" />
-    <orderEntry type="library" name="Gradle: commons-io:commons-io:2.3" level="project" />
     <orderEntry type="library" name="Gradle: javax.servlet:servlet-api:2.3" level="project" />
+    <orderEntry type="library" name="Gradle: commons-io:commons-io:2.3" level="project" />
   </component>
   <component name="TestModuleProperties" production-module="kaoqing_main" />
 </module>

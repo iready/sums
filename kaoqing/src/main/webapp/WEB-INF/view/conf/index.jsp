@@ -3,6 +3,8 @@
 <head>
     <jsp:include page="/WEB-INF/common/head.jsp"/>
     <script type="text/javascript" src="/js/jquery-validate.min.js"></script>
+    <link rel="stylesheet" href="/js/layer/skin/layer.css"/>
+    <script type="text/javascript" src="/js/layer/layer.js"></script>
     <%--<script type="text/javascript" src="/js/laydate/laydate.js"></script>--%>
     <script type="text/javascript">
         seajs.use('proJs/conf/index', function (v) {
@@ -10,6 +12,7 @@
             try {
                 if (${isEdit})v.edit_init(${c});
             } catch (e) {
+
             }
         })
     </script>
@@ -39,6 +42,26 @@
                                     <div class="form-group">
                                         <strong>当前配置名字</strong>
                                         <input type="text" name="c.confName" id="confName" size="20"/>
+                                    </div>
+                                    <div class="form-group">
+                                        <strong>适用于</strong>
+                                        <div class="button-group radio">
+                                            <label class="button" id="radio_fy">
+                                                <input name="u.unitType" value="0" checked="checked" type="radio">法院
+                                            </label>
+                                            <label class="button" id="radio_dept">
+                                                <input name="u.unitType" value="1" type="radio">部门
+                                            </label>
+                                        </div>
+                                        <div class="button-group">
+                                            <input style="display: none" value="请选择" type="button" id="choose_"
+                                                   class="button"/>
+                                            <input id="hide_v" name="u.unit" type="hidden"/>
+                                            <input id="show_v" type="hidden"/>
+                                        </div>
+                                        <div class="panel" id="show_div" style="display: none;">
+                                            <div class="panel-body"></div>
+                                        </div>
                                     </div>
                                 </div>
                             </div>

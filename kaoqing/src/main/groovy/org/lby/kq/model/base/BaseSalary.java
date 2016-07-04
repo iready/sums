@@ -55,4 +55,13 @@ public abstract class BaseSalary<M extends BaseSalary<M>> extends Model<M> imple
 		return get("deptId");
 	}
 
+	public M setConfid(java.lang.String confid) {
+		set("confid", confid);
+	return (M)this;
+}
+
+	public java.lang.String getConfid() {
+		return get("confid");
+	}
+
 }
