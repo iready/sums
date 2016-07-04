@@ -10,7 +10,7 @@
         seajs.use('proJs/conf/index', function (v) {
             v.init();
             try {
-                if (${isEdit})v.edit_init(${c});
+                if (${isEdit})v.edit_init(${c}, ${u});
             } catch (e) {
 
             }
@@ -57,7 +57,7 @@
                                             <input style="display: none" value="请选择" type="button" id="choose_"
                                                    class="button"/>
                                             <input id="hide_v" name="u.unit" type="hidden"/>
-                                            <input id="show_v" type="hidden"/>
+                                            <input id="show_v" name="u.unitName" type="hidden"/>
                                         </div>
                                         <div class="panel" id="show_div" style="display: none;">
                                             <div class="panel-body"></div>

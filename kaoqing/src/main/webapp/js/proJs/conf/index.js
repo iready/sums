@@ -20,8 +20,14 @@ define(function (require, exports, module) {
                 $('#' + json_form[i][ii]).addClass(arr_class[0]);
             }
         }
+        function clean_selct() {
+            $('#hide_v').val('');
+            $('#show_v').val('');
+        }
+
         $('#radio_fy').click(function () {
             var c_ = $('#choose_').unbind('click').show(), h_ = $('#show_v'), panel_b = $('#show_div .panel-body').empty(), panel_show_div = $('#show_div').hide();
+            clean_selct();
             $.openSelect(c_, {
                 fy: {
                     hideSelect: "#hide_v",
@@ -37,6 +43,7 @@ define(function (require, exports, module) {
         });
         $('#radio_dept').click(function () {
             var c_ = $('#choose_').unbind('click').show(), h_ = $('#show_v'), panel_b = $('#show_div .panel-body').empty(), panel_show_div = $('#show_div').hide();
+            clean_selct();
             $.openSelect(c_, {
                 dept: {
                     hideSelect: "#hide_v",
@@ -63,7 +70,7 @@ define(function (require, exports, module) {
             return true;
         });
     };
-    exports.edit_init = function (json) {
+    exports.edit_init = function (json, choose_unit) {
         for (var i in json) {
             if ($.inArray(i, arr_dk) == -1) {
                 $('input[name="c.' + i + '"]').val(json[i]);
@@ -73,5 +80,15 @@ define(function (require, exports, module) {
                 $('#' + json_form[i][1]).val(arr_temp[1]);
             }
         }
+        if (choose_unit.unitType == 0) {
+            $('#radio_fy').trigger('click');
+        } else {
+            $('#radio_dept').trigger('click');
+        }
+        var panel_b = $('#show_div .panel-body').empty(), panel_show_div = $('#show_div').hide();
+        $('#hide_v').val(choose_unit.unit);
+        $('#show_v').val(choose_unit.unitName);
+        panel_b.text(choose_unit.unitName);
+        panel_show_div.fadeIn();
     };
 });

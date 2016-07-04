@@ -13,4 +13,8 @@ public class BridgeConfigUnit extends BaseBridgeConfigUnit<BridgeConfigUnit> {
     public void clean_by_config(ConfigTime configTime) {
         Db.update("delete from " + TABLENAME + " where confId=?", configTime.getId());
     }
+
+    public BridgeConfigUnit find_by_config(ConfigTime configTime) {
+        return findFirst("select * from " + TABLENAME + " where confId=?", configTime.getId());
+    }
 }

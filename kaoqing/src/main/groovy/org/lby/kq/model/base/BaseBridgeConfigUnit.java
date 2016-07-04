@@ -46,4 +46,13 @@ public abstract class BaseBridgeConfigUnit<M extends BaseBridgeConfigUnit<M>> ex
 		return get("confId");
 	}
 
+	public M setUnitName(java.lang.String unitName) {
+		set("unitName", unitName);
+	return (M)this;
+}
+
+	public java.lang.String getUnitName() {
+		return get("unitName");
+	}
+
 }

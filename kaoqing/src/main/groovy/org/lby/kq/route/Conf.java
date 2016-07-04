@@ -10,7 +10,6 @@ import org.lby.kq.model.ConfigTime;
 import org.lby.kq.service.ServiceOfConf;
 
 import java.util.Date;
-import java.util.UUID;
 
 @Before(value = Aop_Conf.class)
 public class Conf extends Controller implements SysVar {
@@ -44,7 +43,9 @@ public class Conf extends Controller implements SysVar {
     }
 
     public void edit() {
-        setAttr("c", JsonKit.toJson(ConfigTime.dao.findById(getPara()))).setAttr("isEdit", true);
+        ConfigTime bc = ConfigTime.dao.findById(getPara());
+        setAttr("c", JsonKit.toJson(bc)).setAttr("isEdit", true);
+        setAttr("u", JsonKit.toJson(BridgeConfigUnit.dao.find_by_config(bc)));
         renderJsp("index.jsp");
     }
 }
