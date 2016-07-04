@@ -26,8 +26,8 @@ public class LoginInterceptor implements Interceptor, SysVar {
                     session.setAttribute(EMAIL, email);
                     session.setAttribute(USER_NAME, user.getStr("XM"));
 //					session.setAttribute(USER_ID, user.getInt("userId"));
-//					session.setAttribute(DEPT_ID, user.getInt("orgId"));
-//					session.setAttribute(FY, user.getStr("FY"));
+                    session.setAttribute(DEPT_ID, user.getInt("orgId"));
+                    session.setAttribute(FY, user.getStr("FY"));
 //					session.setAttribute(ROLES, Admin.dao.roles(email, user.getInt("orgId")));
 //					session.setAttribute(PERMIS, RolePermi.dao.queryMyPermi(email, user.getInt("orgId")));
 //					session.setAttribute(SCOPES, RoleScope.dao.scopes(email, user.getInt("orgId")));

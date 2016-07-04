@@ -5,6 +5,7 @@ define(function (require, exports, module) {
     exports.new_td = function (str) {
         var td = $('<td></td>');
         if (typeof str != "undefined" || str != '')td.text(str);
+        // else if (typeof str == "object") td.append(str);
         return td;
     }
     exports.new_th = function (str) {

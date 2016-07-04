@@ -49,7 +49,11 @@ public class IConverImpl implements IConver {
                 ConverUtils.cmd_print2swf(tagetDir, source);
                 File file = new File(tagetDir, Str.getPrefix(source) + ".swf");
                 if (file.exists()) {
-                    file.renameTo(new File(mdd, Str.getPrefix(file_name) + ".swf"));
+                    File yc = new File(mdd, Str.getPrefix(file_name) + ".swf");
+                    file.renameTo(yc);
+                    if (yc.exists()) {
+                        System.out.println("转换成功");
+                    }
                 } else {
                     System.out.println("转换失败");
                 }
