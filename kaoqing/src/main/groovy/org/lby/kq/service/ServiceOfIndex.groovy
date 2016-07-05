@@ -10,10 +10,34 @@ import org.lby.kq.model.Salary
 
 import java.text.SimpleDateFormat
 
-/**
- * Created by Administrator on 2016/7/5.
- */
 class ServiceOfIndex implements SysVar {
+    /**
+     * 按钮状态分析
+     * @return
+     */
+    static Map<String, Object> btn_analysis(ConfigTime configTime) {
+        Map<String, Object> map = new HashMap<>();
+        DateTime now = new DateTime(System.currentTimeMillis());
+        String string_dk_pre = now.toString("yyyy-MM-dd");
+        map.first = btn_analysis_support(string_dk_pre, configTime.first, configTime.beforeSb, configTime.afterSb, now);
+        map.second = btn_analysis_support(string_dk_pre, configTime.second, configTime.beforeXb, configTime.afterXb, now);
+        map.third = btn_analysis_support(string_dk_pre, configTime.third, configTime.beforeSb, configTime.afterSb, now);
+        map.fourth = btn_analysis_support(string_dk_pre, configTime.fourth, configTime.beforeXb, configTime.afterXb, now);
+        return map;
+    }
+
+    static boolean btn_analysis_support(String string_dk_pre, String time, Integer before, Integer after, DateTime now) {
+        //打卡时间在打卡限定时间内
+        DateTime date_dk = DateTime.parse(string_dk_pre + " " + time, DateTimeFormat.forPattern("yyyy-MM-dd HH:mm:ss"));
+        DateTime date_before_dk = date_dk.minusMinutes(before);
+        DateTime date_after_dk = date_dk.plusMinutes(after);
+        if (date_before_dk.isBefore(now) && date_after_dk.isAfter(now)) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+
     /**
      * 根据当前用户拿到合适的id
      *

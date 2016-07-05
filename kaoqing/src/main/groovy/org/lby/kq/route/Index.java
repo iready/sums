@@ -7,6 +7,7 @@ import org.lby.kq.aop.Aop_Index;
 import org.lby.kq.common.SysVar;
 import org.lby.kq.model.BridgeConfigUnit;
 import org.lby.kq.model.ConfigTime;
+import org.lby.kq.model.Salary;
 import org.lby.kq.service.ServiceOfIndex;
 
 import java.util.HashMap;
@@ -17,10 +18,12 @@ public class Index extends Controller implements SysVar {
     //打卡页面
     public void index() {
         String confId = ServiceOfIndex.getConfId(this);
+        setAttr("salarys", JsonKit.toJson(Salary.dao.find_email_now((String) getSessionAttr(EMAIL))));
         setAttr("confId", confId);
-        if (confId != null) {
-            setAttr("c", JsonKit.toJson(ConfigTime.dao.findById(confId)));
-        }
+        ConfigTime configTime = ConfigTime.dao.findById(confId);
+        if (confId != null) setAttr("c", JsonKit.toJson(configTime));
+        /*按钮显示判断*/
+        setAttr("btn_show", JsonKit.toJson(ServiceOfIndex.btn_analysis(configTime)));
     }
 
     /**

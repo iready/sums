@@ -8,7 +8,7 @@
     <jsp:include page="/WEB-INF/common/head.jsp"/>
     <script type="text/javascript">
         seajs.use('proJs/index/index', function (v) {
-            v.init(${c},<%=System.currentTimeMillis()%>);
+            v.init(${c},<%=System.currentTimeMillis()%>,${salarys},${btn_show});
         })
     </script>
 </head>
