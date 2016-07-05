@@ -64,4 +64,13 @@ public abstract class BaseSalary<M extends BaseSalary<M>> extends Model<M> imple
 		return get("confid");
 	}
 
+	public M setType(java.lang.Integer type) {
+		set("type", type);
+	return (M)this;
+}
+
+	public java.lang.Integer getType() {
+		return get("type");
+	}
+
 }

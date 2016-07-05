@@ -15,6 +15,11 @@ define(function (require, exports, module) {
                 /*判断是否显示button*/
                 var bt = $('<button class="button text-blue">打卡</button>').data("type", i);
                 bt.click(function () {
+                    $.ajax({
+                        url: '/dk', data: {type: $(this).data('type')}, success: function (dat) {
+
+                        }
+                    });
                     console.log($(this).data('type'))
                 });
                 return bt;

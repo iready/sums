@@ -34,6 +34,10 @@ public class Index extends Controller implements SysVar {
      */
     public void dk() {
         String confId = getConfId();
-
+        if (confId == null || confId.trim().isEmpty()) {
+            Integer type = getParaToInt("type");
+            System.out.println(type);
+        }
+        renderNull();
     }
 }
