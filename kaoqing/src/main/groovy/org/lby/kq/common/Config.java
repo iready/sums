@@ -73,7 +73,6 @@ public class Config extends JFinalConfig {
 
     }
 
-    @Override
     public void afterJFinalStart() {
         super.afterJFinalStart();
         ModelRecordElResolver.setResolveBeanAsModel(true);
