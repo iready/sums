@@ -17,7 +17,7 @@ define(function (require, exports, module) {
                 bt.click(function () {
                     $.ajax({
                         url: '/dk', data: {type: $(this).data('type')}, success: function (dat) {
-
+                            
                         }
                     });
                     console.log($(this).data('type'))

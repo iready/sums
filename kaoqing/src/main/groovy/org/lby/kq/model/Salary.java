@@ -1,5 +1,6 @@
 package org.lby.kq.model;
 
+import com.jfinal.plugin.activerecord.Db;
 import org.lby.kq.model.base.BaseSalary;
 
 /**
@@ -7,5 +8,11 @@ import org.lby.kq.model.base.BaseSalary;
  */
 @SuppressWarnings("serial")
 public class Salary extends BaseSalary<Salary> {
-	public static final Salary dao = new Salary();
+    public static final Salary dao = new Salary();
+
+
+    public boolean isCanDK(String email, Integer type) {
+        Long c = Db.queryLong("select count(0) from " + TABLENAME + " where yx=? and type=? and date(now())=date(time_dj)", email, type);
+        return c == 0;
+    }
 }

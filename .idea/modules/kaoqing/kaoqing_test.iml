@@ -27,6 +27,7 @@
     <orderEntry type="library" name="Gradle: org.web.s:servlet-api:1.0" level="project" />
     <orderEntry type="library" name="Gradle: org.web:jsp-api:1.0" level="project" />
     <orderEntry type="library" name="Gradle: standard:standard:standard" level="project" />
+    <orderEntry type="library" name="Gradle: joda-time:joda-time:2.9.3" level="project" />
     <orderEntry type="library" name="Gradle: jacob:jacob:1.6" level="project" />
     <orderEntry type="library" name="Gradle: commons-logging:commons-logging:1.1" level="project" />
     <orderEntry type="library" name="Gradle: javax.servlet:servlet-api:2.3" level="project" />
