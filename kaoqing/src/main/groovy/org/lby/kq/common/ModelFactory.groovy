@@ -6,9 +6,6 @@ import com.jfinal.plugin.druid.DruidPlugin
 
 import javax.sql.DataSource
 
-/**
- * Created by Administrator on 2016/6/30.
- */
 class ModelFactory {
     public static DataSource getDataSource() {
         PropKit.use("db.properties");

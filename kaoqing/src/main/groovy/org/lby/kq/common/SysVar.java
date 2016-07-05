@@ -20,7 +20,7 @@ public interface SysVar {
 
     String route_name = "_route_name";
     String route_index = "_index";
-    String[] menu_name = new String[]{"我要打卡", "我的审批", "我的申请", "我的代办", "统计", "参数配置"};
-    String[] menu_url = new String[]{"/", "我的审批", "我的申请", "我的代办", "统计", "/config/view_list"};
+    String[] menu_name = new String[]{"我要打卡", "我的申请", "我的审批", "我的代办", "统计", "参数配置", "权限管理"};
+    String[] menu_url = new String[]{"/", "我的审批", "我的申请", "我的代办", "统计", "/config/view_list", "http://147.1.4.53:8008/admin/home/kq"};
 
 }

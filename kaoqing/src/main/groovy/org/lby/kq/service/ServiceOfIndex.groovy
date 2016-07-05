@@ -31,11 +31,8 @@ class ServiceOfIndex implements SysVar {
         DateTime date_dk = DateTime.parse(string_dk_pre + " " + time, DateTimeFormat.forPattern("yyyy-MM-dd HH:mm:ss"));
         DateTime date_before_dk = date_dk.minusMinutes(before);
         DateTime date_after_dk = date_dk.plusMinutes(after);
-        if (date_before_dk.isBefore(now) && date_after_dk.isAfter(now)) {
-            return true;
-        } else {
-            return false;
-        }
+        if (date_before_dk.isBefore(now) && date_after_dk.isAfter(now)) return true;
+        else return false;
     }
 
     /**
