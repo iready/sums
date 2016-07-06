@@ -19,7 +19,7 @@ class ModelFactory {
         plugin.start();
         return plugin.getDataSource();
     }
-    /*public static void main(String[] args) {
+    public static void main(String[] args) {
         String path = new ModelFactory().rootPath() + "src/org/lby";
         DataSource dataSource = getDataSource();
         Generator gernerator = new Generator(dataSource, "org.lby.kq.model.base", "D:\\JAVA\\workspace\\mine\\sums\\kaoqing\\src\\main\\groovy\\org\\lby\\kq\\model\\base", "org.lby.kq.model", "D:\\JAVA\\workspace\\mine\\sums\\kaoqing\\src\\main\\groovy\\org\\lby\\kq\\model");
@@ -33,9 +33,9 @@ class ModelFactory {
         gernerator.setRemovedTableNamePrefixes("kq_");
         // 生成
         gernerator.generate();
-    }*/
+    }
 
-    public static void main(String[] args) {
+    /*public static void main(String[] args) {
         String path = new ModelFactory().rootPath() + "src/org/lby";
         DataSource dataSource = getBaseSource();
         Generator gernerator = new Generator(dataSource, "org.lby.kq.model.common.base", "D:\\JAVA\\workspace\\mine\\sums\\kaoqing\\src\\main\\groovy\\org\\lby\\kq\\model\\common\\base", "org.lby.kq.model.common", "D:\\JAVA\\workspace\\mine\\sums\\kaoqing\\src\\main\\groovy\\org\\lby\\kq\\model\\common");
@@ -49,7 +49,7 @@ class ModelFactory {
         gernerator.setRemovedTableNamePrefixes("qxgl_");
         // 生成
         gernerator.generate();
-    }
+    }*/
     public String rootPath() {
         // 取得根目录路径
         String rootPath = this.getClass().getResource("/").getPath();

@@ -5,6 +5,7 @@ import com.jfinal.aop.Invocation;
 import com.jfinal.core.Controller;
 import org.jasig.cas.client.authentication.AttributePrincipal;
 import org.lby.kq.model.User;
+import org.lby.kq.model.common.Manage_;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
@@ -29,7 +30,7 @@ public class LoginInterceptor implements Interceptor, SysVar {
                     session.setAttribute(DEPT_ID, user.getInt("orgId"));
                     session.setAttribute(FY, user.getStr("FY"));
 //					session.setAttribute(ROLES, Admin.dao.roles(email, user.getInt("orgId")));
-//					session.setAttribute(PERMIS, RolePermi.dao.queryMyPermi(email, user.getInt("orgId")));
+                    session.setAttribute(PERMIS, Manage_.query_qx(role_qx, email));
 //					session.setAttribute(SCOPES, RoleScope.dao.scopes(email, user.getInt("orgId")));
                     // session.setAttribute(JGBS, user.getInt("JGBS"));
                     // session.setAttribute(RYBS, user.getInt("RYBS"));

@@ -8,6 +8,7 @@ import org.lby.kq.common.SysVar;
 import org.lby.kq.model.BridgeConfigUnit;
 import org.lby.kq.model.ConfigTime;
 import org.lby.kq.model.Salary;
+import org.lby.kq.model.common.Manage_;
 import org.lby.kq.service.ServiceOfIndex;
 
 import java.util.HashMap;
