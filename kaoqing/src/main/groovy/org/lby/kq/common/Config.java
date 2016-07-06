@@ -10,6 +10,7 @@ import com.jfinal.render.ViewType;
 import org.lby.kq.model.Dept;
 import org.lby.kq.model.User;
 import org.lby.kq.model._MappingKit;
+import org.lby.kq.route.Application;
 import org.lby.kq.route.Conf;
 import org.lby.kq.route.Index;
 
@@ -44,6 +45,7 @@ public class Config extends JFinalConfig {
     public void configRoute(Routes routes) {
         routes.add("/", Index.class, "/index");
         routes.add("/config", Conf.class, "/conf");
+        routes.add("/apply", Application.class, "/app");
     }
 
 

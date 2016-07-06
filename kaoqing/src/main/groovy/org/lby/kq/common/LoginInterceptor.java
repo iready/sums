@@ -3,12 +3,15 @@ package org.lby.kq.common;
 import com.jfinal.aop.Interceptor;
 import com.jfinal.aop.Invocation;
 import com.jfinal.core.Controller;
+import com.jfinal.kit.JsonKit;
 import org.jasig.cas.client.authentication.AttributePrincipal;
 import org.lby.kq.model.User;
 import org.lby.kq.model.common.Manage_;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
+import java.util.HashMap;
+import java.util.Map;
 
 public class LoginInterceptor implements Interceptor, SysVar {
 
@@ -43,9 +46,17 @@ public class LoginInterceptor implements Interceptor, SysVar {
 //					controller.setCookie(new Cookie(USER_NAME, Base64Utils.encode(user.getStr("XM"))));
                 }
             }
-            ai.invoke();
+            if (session.getAttribute(json_js_config) == null || debug) {
+                Map<String, Object> map = new HashMap<>();
+                map.put("mname", menu_name);
+                map.put("murl", menu_url);
+                map.put("permis", session.getAttribute(PERMIS));
+                session.setAttribute(json_js_config, JsonKit.toJson(map));
+            }
         } catch (Exception e) {
             e.printStackTrace();
+        } finally {
+            ai.invoke();
         }
     }
 }

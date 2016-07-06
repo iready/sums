@@ -26,4 +26,7 @@ public interface SysVar {
     String role_qx = "kq";
     String PERMIS = "pri$$";
 
+    String json_js_config = "!@#$!config";
+
+    boolean debug=true;
 }

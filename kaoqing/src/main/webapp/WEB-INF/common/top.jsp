@@ -14,16 +14,11 @@
     <button class="button icon-navicon" data-target="#nav-pills6">
     </button>
     <ul class="nav nav-menu nav-inline nav-pills nav-justified nav-big nav-navicon  border-yellow" id="nav-pills6">
-        <%
-            StringBuffer sb = new StringBuffer();
-            for (int i = 0; i < SysVar.menu_name.length; i++) {
-                sb.append("<li class='");
-                if ((Integer) request.getAttribute(SysVar.route_name) == i) {
-                    sb.append("active");
-                }
-                sb.append("'><a href='").append(SysVar.menu_url[i]).append("'>").append(SysVar.menu_name[i]).append("</a></li>");
-            }
-            out.print(sb);
-        %>
+
     </ul>
 </div>
+<script type="text/javascript">
+    seajs.use('proJs/head', function (v) {
+        v.init(<%=session.getAttribute(SysVar.json_js_config)%>, '<%=request.getAttribute(SysVar.route_name)%>');
+    });
+</script>
