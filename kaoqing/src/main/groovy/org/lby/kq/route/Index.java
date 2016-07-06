@@ -34,5 +34,4 @@ public class Index extends Controller implements SysVar {
         Integer type = getParaToInt("type", 0);
         renderJson(ServiceOfIndex.judegeIsDK(this, type));
     }
-
 }

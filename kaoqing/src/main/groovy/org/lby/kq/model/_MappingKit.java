@@ -16,6 +16,7 @@ import com.jfinal.plugin.activerecord.ActiveRecordPlugin;
 public class _MappingKit {
 
 	public static void mapping(ActiveRecordPlugin arp) {
+		arp.addMapping("kq_apply", "id", Apply.class);
 		arp.addMapping("kq_bridge_config_unit", "id", BridgeConfigUnit.class);
 		arp.addMapping("kq_config_time", "id", ConfigTime.class);
 		arp.addMapping("kq_salary", "id", Salary.class);
