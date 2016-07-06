@@ -4,8 +4,8 @@
 <head>
     <jsp:include page="/WEB-INF/common/head.jsp"/>
     <script type="text/javascript">
-        seajs.use('proJs/app/index', function (v) {
-            v.init(${a});
+        seajs.use('proJs/app/db', function (v) {
+            v.init();
         });
     </script>
 </head>
@@ -19,7 +19,6 @@
     <table class="table ">
         <tr>
             <th>申请人</th>
-            <th>审批人</th>
             <th>状态</th>
             <th>操作</th>
         </tr>

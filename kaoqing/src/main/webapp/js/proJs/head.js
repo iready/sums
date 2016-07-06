@@ -12,7 +12,6 @@ define(function (require, exports, module) {
                 else if (obj1 == arr_me[1] && $.inArray('8', obj.permis) != -1) tar.append(li.append(a));
             } else tar.append(li.append(a));
         }
-        console.log(obj);
     };
     
 });

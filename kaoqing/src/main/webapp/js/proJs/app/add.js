@@ -1,5 +1,5 @@
 define(function (require, exports, module) {
-    exports.init = function () {
-
+    exports.init = function (obj) {
+        console.log(a)
     }
 });

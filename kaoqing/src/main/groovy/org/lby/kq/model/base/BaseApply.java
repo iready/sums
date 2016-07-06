@@ -82,4 +82,13 @@ public abstract class BaseApply<M extends BaseApply<M>> extends Model<M> impleme
 		return get("reason");
 	}
 
+	public M setTimeSq(java.util.Date timeSq) {
+		set("time_sq", timeSq);
+	return (M)this;
+}
+
+	public java.util.Date getTimeSq() {
+		return get("time_sq");
+	}
+
 }

@@ -4,8 +4,8 @@
 <head>
     <jsp:include page="/WEB-INF/common/head.jsp"/>
     <script type="text/javascript">
-        seajs.use('proJs/app/index', function (v) {
-            v.init(${a});
+        seajs.use('proJs/app/sp', function (v) {
+            v.init();
         });
     </script>
 </head>
