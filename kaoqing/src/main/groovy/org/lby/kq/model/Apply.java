@@ -20,6 +20,6 @@ public class Apply extends BaseApply<Apply> {
     }
 
     public List<Apply> find_sp(String email) {
-        return find("select * from " + TABLENAME + " where spr=? and state<>0", email);
+        return find("select * from " + TABLENAME + " where spr=? and state<>0 order by time_sp desc", email);
     }
 }

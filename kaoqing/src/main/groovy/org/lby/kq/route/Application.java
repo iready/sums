@@ -41,7 +41,7 @@ public class Application extends Controller implements SysVar {
      * 审批
      */
     public void sp() {
-        setAttr("a", JsonKit.toJson(Apply.dao.find_sp((String) getSessionAttr(EMAIL))));
+        setAttr("a", JsonKit.toJson(ServiceOfApplication.for_sp(this)));
     }
 
     /**
@@ -53,7 +53,7 @@ public class Application extends Controller implements SysVar {
             Integer state = getParaToInt("state");
             Apply apply = Apply.dao.findById(id);
             if (apply != null && id != null && state != null && re != null) {
-                apply.setState(state).setSpReason(re).update();
+                apply.setState(state).setTimeSp(new Date()).setSpReason(re).update();
             }
             renderText("审批成功");
         } catch (Exception e) {

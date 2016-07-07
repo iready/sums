@@ -19,6 +19,7 @@
     <table class="table ">
         <tr>
             <th>申请人</th>
+            <th>申请时间</th>
             <th>状态</th>
             <th>操作</th>
         </tr>
@@ -36,7 +37,7 @@
             </label>
             <div class="form-group  padding">
                 <strong>理由</strong>
-                <textarea type="text" class="input input-auto"  id="liy"></textarea>
+                <textarea type="text" class="input input-auto" id="liy"></textarea>
             </div>
         </div>
         <button class="button" id="btn_sure">确定</button>
