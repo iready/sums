@@ -38,6 +38,6 @@ public class Application extends Controller implements SysVar {
     }
 
     public void db() {
-
+        setAttr("a", JsonKit.toJson(Apply.dao.find_db((String) getSessionAttr(EMAIL))));
     }
 }

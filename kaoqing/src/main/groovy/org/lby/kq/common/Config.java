@@ -13,6 +13,7 @@ import org.lby.kq.model._MappingKit;
 import org.lby.kq.route.Application;
 import org.lby.kq.route.Conf;
 import org.lby.kq.route.Index;
+import org.lby.kq.route.Statistics;
 
 public class Config extends JFinalConfig {
     static Prop prop = null;
@@ -46,6 +47,7 @@ public class Config extends JFinalConfig {
         routes.add("/", Index.class, "/index");
         routes.add("/config", Conf.class, "/conf");
         routes.add("/apply", Application.class, "/app");
+        routes.add("/statistics", Statistics.class, "/sta");
     }
 
 
