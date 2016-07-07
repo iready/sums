@@ -5,12 +5,12 @@ define(function (require, exports, module) {
             user: {
                 hideSelect: "#hide_v",
                 showSelect: "#show_v",
-                hideType: "id",
-                showType: "name",
-                selectedMulti: true,
+                hideType: "youxiang",
+                showType: "xm",
+                selectedMulti: false,
             }, onEnd: function () {
-                // panel_b.text(arguments[1]);
-                // panel_show_div.fadeIn();
+                $('#spr').val(arguments[0])
+                $('#div_s').text(arguments[1]);
             }
         });
     }

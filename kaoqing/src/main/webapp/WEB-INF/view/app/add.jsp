@@ -43,7 +43,10 @@
                     <div class="form-group  padding">
                         <strong>审批人：</strong>
                         <a class="button" id="choose" href="javascript:;">选择</a>
-                        <input type="hidden" class="input input-auto" size="10" name="a.spr"/>
+                        <input type="hidden"  class="input input-auto" size="10" id="spr" name="a.spr"/>
+                    </div>
+                    <div id="div_s" class="form-group  padding">
+
                     </div>
                     <input type="submit" class="button btn-block" value="保存"/>
                 </div>

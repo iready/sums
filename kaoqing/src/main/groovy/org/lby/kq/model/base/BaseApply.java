@@ -91,4 +91,13 @@ public abstract class BaseApply<M extends BaseApply<M>> extends Model<M> impleme
 		return get("time_sq");
 	}
 
+	public M setTimeSp(java.util.Date timeSp) {
+		set("time_sp", timeSp);
+	return (M)this;
+}
+
+	public java.util.Date getTimeSp() {
+		return get("time_sp");
+	}
+
 }
