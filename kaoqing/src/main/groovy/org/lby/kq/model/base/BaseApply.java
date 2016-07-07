@@ -100,4 +100,13 @@ public abstract class BaseApply<M extends BaseApply<M>> extends Model<M> impleme
 		return get("time_sp");
 	}
 
+	public M setSpReason(java.lang.String spReason) {
+		set("sp_reason", spReason);
+	return (M)this;
+}
+
+	public java.lang.String getSpReason() {
+		return get("sp_reason");
+	}
+
 }

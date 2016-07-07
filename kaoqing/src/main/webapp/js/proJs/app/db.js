@@ -18,7 +18,15 @@ define(function (require, exports, module) {
             $('#tbody').append(tr);
         }
         $('#btn_sure').click(function () {
-            $.ajax({url: ''});
+            $.ajax({
+                url: '/apply/ajax_sp',
+                data: {id: dq, state: $(':input[name="sp"]:checked').val(), sp_reason: $('#liy').text()},
+                success: function () {
+                    layer.msg(arguments[0]);
+                    location.reload();
+                }
+            });
+
         })
     };
 });

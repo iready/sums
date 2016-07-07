@@ -14,7 +14,7 @@
 </head>
 <body>
 <jsp:include page="/WEB-INF/common/top.jsp"/>
-<div class="container">
+<div class="container ">
     <c:if test="${empty confId}">
         <div class="alert alert-yellow">
             <span class="close rotate-hover"></span><strong>注意：</strong>您所在的法院或者部门没有配置相应的打卡参数，请联系管理员

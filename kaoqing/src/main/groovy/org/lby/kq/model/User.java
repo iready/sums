@@ -7,7 +7,6 @@ import org.lby.kq.common.SysVar;
 /**
  * 门户用户表
  * 
- * @author 周武 2016-3-16 下午3:42:19
  */
 public class User extends Model<User> implements SysVar {
 	private static final long serialVersionUID = 2648221167762351569L;

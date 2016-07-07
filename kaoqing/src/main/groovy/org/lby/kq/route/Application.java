@@ -6,6 +6,7 @@ import com.jfinal.kit.JsonKit;
 import org.lby.kq.aop.Aop_Apply;
 import org.lby.kq.common.SysVar;
 import org.lby.kq.model.Apply;
+import org.lby.kq.service.ServiceOfApplication;
 
 import java.util.Date;
 
@@ -22,6 +23,9 @@ public class Application extends Controller implements SysVar {
 
     }
 
+    /**
+     * 保存
+     */
     public void save() {
         try {
             Apply apply = getModel(Apply.class, "a");
@@ -33,11 +37,35 @@ public class Application extends Controller implements SysVar {
         }
     }
 
+    /**
+     * 审批
+     */
     public void sp() {
-
+        setAttr("a", JsonKit.toJson(Apply.dao.find_sp((String) getSessionAttr(EMAIL))));
     }
 
+    /**
+     * ajax_sp
+     */
+    public void ajax_sp() {
+        try {
+            String id = getPara("id"), re = getPara("sp_reason");
+            Integer state = getParaToInt("state");
+            Apply apply = Apply.dao.findById(id);
+            if (apply != null && id != null && state != null && re != null) {
+                apply.setState(state).setSpReason(re).update();
+            }
+            renderText("审批成功");
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
+    /**
+     * 待办
+     */
     public void db() {
-        setAttr("a", JsonKit.toJson(Apply.dao.find_db((String) getSessionAttr(EMAIL))));
+        setAttr("a", JsonKit.toJson(ServiceOfApplication.for_db(this)));
     }
+
 }
