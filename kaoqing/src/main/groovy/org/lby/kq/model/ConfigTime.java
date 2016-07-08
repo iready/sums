@@ -19,4 +19,8 @@ public class ConfigTime extends BaseConfigTime<ConfigTime> {
     public List<Record> find_by_email(String email) {
         return Db.find("select * from " + TABLENAME + " where provider=? order by createTime desc", email);
     }
+
+    public List<Record> find_by_fy(String fy) {
+        return Db.find("select kct.* from kq_bridge_config_unit kbcu LEFT JOIN kq_config_time kct on kbcu.confId=kct.id where kbcu.unitType=0 and kbcu.unit=?",fy);
+    }
 }

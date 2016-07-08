@@ -24,6 +24,14 @@ public class Salary extends BaseSalary<Salary> {
      * @return
      */
     public List<Salary> find_email_now(String email) {
-        return find("select * from " + TABLENAME + " where yx=? and date(time_dj)=date(now())",email);
+        return find("select * from " + TABLENAME + " where yx=? and date(time_dj)=date(now())", email);
+    }
+
+    public List<Salary> find_by_fy(String unit, Integer year, Integer month, String days) {
+        String sql = "SELECT * FROM kq_salary   WHERE fy=? and year(time_dj)=? and month(time_dj)=? ";
+        if (days != null && !days.trim().isEmpty()) {
+            sql += "and day(time_dj) in(" + days + ")";
+        }
+        return find(sql, unit, year, month);
     }
 }

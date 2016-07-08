@@ -1,7 +1,7 @@
 <%@ page import="org.lby.kq.common.SysVar" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <title>考勤系统</title>
-<link  rel="stylesheet" href="/js/pinture.css"/>
+<link rel="stylesheet" href="/js/pinture.css"/>
 <%--<link rel="stylesheet" href="<%=SysVar.sys_pq%>/js/pintuer_model/pintuer.css" type="text/css"/>--%>
 <script type="text/javascript" src="<%=SysVar.sys_In%>/jquery/jquery.min.js"></script>
 <%--<script type="text/javascript" src="<%=SysVar.sys_pq%>/js/pintuer_model/pintuer.js"></script>--%>
@@ -17,11 +17,11 @@
             "suser": "http://147.1.4.52:8187/js/select/selectuser.js",
             "layer": "/js/common/layer/layer-2.1",
             "laydate": "/js/common/laydate/laydate",
-            "jform": "/js/common/base/jquery.form.min",
+            "jform": "/js/proJs/jquery.form.min",
             "base64": "/js/common/base/jquery.base64",
             "build": "/js/$build",
             "qutils": "/js/project_model/zyq/utils",
-            "echat": "/js/common/echarts.min"
+            "echat": "/js/common/echarts.min",
         },
         preload: ["pin"]
     });

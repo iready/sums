@@ -23,7 +23,7 @@ public class Conf extends Controller implements SysVar {
     }
 
     public void view_list() {
-        setAttr("c", ServiceOfConf.for_view_list(ConfigTime.dao.find_by_email((String) getSessionAttr(EMAIL))));
+        setAttr("c", ServiceOfConf.for_view_list(ConfigTime.dao.find_by_fy((String) getSessionAttr(FY))));
     }
 
     public void save() {
