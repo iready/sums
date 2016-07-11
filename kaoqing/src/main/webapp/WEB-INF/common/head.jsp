@@ -21,7 +21,7 @@
             "base64": "/js/common/base/jquery.base64",
             "build": "/js/$build",
             "qutils": "/js/project_model/zyq/utils",
-            "echat": "/js/common/echarts.min",
+            "echat": "/js/common/echarts.min"
         },
         preload: ["pin"]
     });

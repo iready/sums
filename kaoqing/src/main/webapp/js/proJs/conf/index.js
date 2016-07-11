@@ -20,6 +20,19 @@ define(function (require, exports, module) {
                 $('#' + json_form[i][ii]).addClass(arr_class[0]);
             }
         }
+        /**
+         * 校验规则
+         */
+        $.validator.setDefaults({
+            submitHandler: function () {
+                alert("提交事件!");
+            }
+        });
+        $().ready(function () {
+            $("#configform").validate();
+        });
+
+
         function clean_selct() {
             $('#hide_v').val('');
             $('#show_v').val('');
@@ -34,7 +47,7 @@ define(function (require, exports, module) {
                     showSelect: "#show_v",
                     hideType: "fy",
                     showType: "name",
-                    selectedMulti: true,
+                    selectedMulti: true
                 }, onEnd: function () {
                     panel_b.text(arguments[1]);
                     panel_show_div.fadeIn();
@@ -50,25 +63,26 @@ define(function (require, exports, module) {
                     showSelect: "#show_v",
                     hideType: "id",
                     showType: "name",
-                    selectedMulti: true,
+                    selectedMulti: true
                 }, onEnd: function () {
                     panel_b.text(arguments[1]);
                     panel_show_div.fadeIn();
                 }
             });
         });
-        $('#configform').submit(function () {
-            // 先假设全部验证通过
-
-            // 取值操作
-            var div_con = $('#con').empty();
-            for (var i in arr_dk) {
-                var t1 = json_form[arr_dk[i]][0];
-                var t2 = json_form[arr_dk[i]][1];
-                div_con.append(b.new_hi($('#' + t1).val() + ':' + $('#' + t2).val() + ':59').attr('name', 'c.' + arr_dk[i]));
-            }
-            return true;
-        });
+        // $('#configform').submit(function () {
+        //     // 先假设全部验证通过
+        //
+        //
+        //     // 取值操作
+        //     var div_con = $('#con').empty();
+        //     for (var i in arr_dk) {
+        //         var t1 = json_form[arr_dk[i]][0];
+        //         var t2 = json_form[arr_dk[i]][1];
+        //         div_con.append(b.new_hi($('#' + t1).val() + ':' + $('#' + t2).val() + ':59').attr('name', 'c.' + arr_dk[i]));
+        //     }
+        //     return true;
+        // });
     };
     exports.edit_init = function (json, choose_unit) {
         for (var i in json) {

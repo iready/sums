@@ -125,15 +125,15 @@ $(function () {
             if (e.attr("placeholder") == $checkvalue) {
                 $checkvalue = ""
             }
-            if ($checkvalue != "" || e.attr("data-validate").indexOf("required") >= 0) {
-                for (var i = 0; i < $checkdata.length; i++) {
-                    var $checktype = $checkdata[i].split(":");
-                    if (!$pintuercheck(e, $checktype[0], $checkvalue)) {
-                        $checkstate = false;
-                        $checktext = $checktext + "<li>" + $checktype[1] + "</li>"
-                    }
-                }
-            }
+            // if ($checkvalue != "" || e.attr("data-validate").indexOf("required") >= 0) {
+            //     for (var i = 0; i < $checkdata.length; i++) {
+            //         var $checktype = $checkdata[i].split(":");
+            //         if (!$pintuercheck(e, $checktype[0], $checkvalue)) {
+            //             $checkstate = false;
+            //             $checktext = $checktext + "<li>" + $checktype[1] + "</li>"
+            //         }
+            //     }
+            // }
             if ($checkstate) {
                 e.closest(".form-group").removeClass("check-error");
                 e.parent().find(".input-help").remove();

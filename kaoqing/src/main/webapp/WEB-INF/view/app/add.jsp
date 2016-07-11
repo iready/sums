@@ -3,8 +3,7 @@
 <head>
     <script type="text/javascript" src="/js/laydate/laydate.js"></script>
     <jsp:include page="/WEB-INF/common/head.jsp"/>
-    <link rel="stylesheet" href="/js/layer/skin/layer.css"/>
-    <script type="text/javascript" src="/js/layer/layer.js"></script>
+    <jsp:include page="/WEB-INF/common/layer.jsp"/>
     <script type="text/javascript">
         seajs.use('proJs/app/add', function (v) {
             v.init();
@@ -43,7 +42,7 @@
                     <div class="form-group  padding">
                         <strong>审批人：</strong>
                         <a class="button" id="choose" href="javascript:;">选择</a>
-                        <input type="hidden"  class="input input-auto" size="10" id="spr" name="a.spr"/>
+                        <input type="hidden" class="input input-auto" size="10" id="spr" name="a.spr"/>
                     </div>
                     <div id="div_s" class="form-group  padding">
 

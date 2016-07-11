@@ -15,6 +15,8 @@ import java.util.Date;
 public class Conf extends Controller implements SysVar {
     public void index() {
         setAttr("isEdit", false);
+        setAttr("c", "0");
+        setAttr("u", "0");
     }
 
     public void del() {

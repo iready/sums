@@ -2,10 +2,8 @@
 <html>
 <head>
     <jsp:include page="/WEB-INF/common/head.jsp"/>
-    <script type="text/javascript" src="/js/jquery-validate.min.js"></script>
-    <link rel="stylesheet" href="/js/layer/skin/layer.css"/>
-    <script type="text/javascript" src="/js/layer/layer.js"></script>
-    <%--<script type="text/javascript" src="/js/laydate/laydate.js"></script>--%>
+    <%@include file="/WEB-INF/common/layer.jsp" %>
+    <%@include file="/WEB-INF/common/validate.jsp" %>
     <script type="text/javascript">
         seajs.use('proJs/conf/index', function (v) {
             v.init();
@@ -28,8 +26,8 @@
                     <div class="panel-head">
                         <strong>配置参数</strong>
                         <div style="float:right;margin:-8px 3px 0px 0px">
-                            <button class="fadein-left button bg-green">快速应用设置</button>
-                            <button class="button bg-sub fadein-right">保存</button>
+                            <input type="button" value="快速应用设置" class="button">
+                            <input class="button bg-sub fadein-right" type="submit" value="保存"/>
                         </div>
                     </div>
                     <div class="panel-body">
@@ -40,26 +38,31 @@
                                 </div>
                                 <div class="panel-body">
                                     <div class="form-group">
-                                        <strong>当前配置名字</strong>
-                                        <input type="text" name="c.confName" id="confName" size="20"/>
+                                        <strong class="text-red">* </strong><strong>当前配置名字：</strong>
+                                        <input type="text" name="c.confName" autocomplete="off" id="confName"
+                                               required="required" size="20"/>
                                     </div>
                                     <div class="form-group">
-                                        <strong>适用于</strong>
-                                        <div class="button-group radio">
-                                            <label class="button" id="radio_fy">
-                                                <input name="u.unitType" value="0" checked="checked" type="radio">法院
-                                            </label>
-                                            <label class="button" id="radio_dept">
-                                                <input name="u.unitType" value="1" type="radio">部门
-                                            </label>
-                                        </div>
-                                        <div class="button-group">
-                                            <input style="display: none" value="请选择" type="button" id="choose_"
-                                                   class="button"/>
-                                            <input id="hide_v" name="u.unit" type="hidden"/>
-                                            <input id="show_v" name="u.unitName" type="hidden"/>
-                                        </div>
-                                        <div class="panel" id="show_div" style="display: none;">
+                                        <strong class="text-red">* </strong><strong>适用于：</strong>
+                                        <label id="radio_fy">
+                                            <input name="u.unitType" value="0" checked="checked" type="radio">法院
+                                        </label>
+                                        <label id="radio_dept">
+                                            <input name="u.unitType" value="1" type="radio">部门
+                                        </label>
+                                        <div class="panel" id="show_div" style="margin-top: 10px">
+                                            <div class="panel-head"><strong>已选择的</strong><strong id="tc_lx"></strong>
+                                                <div style="float:right;margin:-8px 3px 0px 0px">
+                                                    <input type="button" value="快速应用设置" class="button">
+                                                    <input class="button bg-sub fadein-right" type="submit" value="保存">
+                                                </div>
+                                            </div>
+                                            <div class="button-group">
+                                                <input value="请选择" type="button" id="choose_"
+                                                       class="button"/>
+                                                <input id="hide_v" name="u.unit" type="hidden"/>
+                                                <input id="show_v" name="u.unitName" type="hidden"/>
+                                            </div>
                                             <div class="panel-body"></div>
                                         </div>
                                     </div>
