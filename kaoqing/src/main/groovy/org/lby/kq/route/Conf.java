@@ -50,4 +50,21 @@ public class Conf extends Controller implements SysVar {
         setAttr("u", JsonKit.toJson(BridgeConfigUnit.dao.find_by_config(bc)));
         renderJsp("index.jsp");
     }
+
+    /**
+     * ajax_重复性验证
+     */
+    public void ajax_cf_yz() {
+        Long ut = getParaToLong("unitType");
+        String u = getPara("unit");
+        try {
+            if (ut != null && u != null) {
+                renderText(BridgeConfigUnit.dao.count_by_unit_unitType(u, ut) + "");
+                return;
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        renderNull();
+    }
 }

@@ -14,9 +14,35 @@ define(function (require, exports, module) {
         sx: ['confName']
     };
     exports.init = function () {
-        // 吊炸天脚本渲染
+        var rules = {"c.confName": "required"}, messages = {"c.confName": "请输入配置名字"};
+        // 脚本渲染
         for (var i in json_form) {
             for (var ii in json_form[i]) {
+                if ($.inArray(i, arr_dk) != -1) {
+                    /*验证脚本*/
+                    $('#' + json_form[i][0]).attr("name", json_form[i][0]);
+                    $('#' + json_form[i][1]).attr("name", json_form[i][1]);
+                    rules[json_form[i][0]] = {
+                        required: true,
+                        hour: [0, 24]
+                    };
+                    rules[json_form[i][1]] = {
+                        required: true,
+                        hour: [0, 60]
+                    }
+                }
+                if (i == "sb" || i == "xb" || i == "hc") {
+                    $('#' + json_form[i][0]).attr("name", json_form[i][0]);
+                    $('#' + json_form[i][1]).attr("name", json_form[i][1]);
+                    rules[json_form[i][0]] = {
+                        required: true,
+                        hour: [0, 200]
+                    };
+                    rules[json_form[i][1]] = {
+                        required: true,
+                        hour: [0, 200]
+                    };
+                }
                 $('#' + json_form[i][ii]).addClass(arr_class[0]);
             }
         }
@@ -24,23 +50,24 @@ define(function (require, exports, module) {
          * 校验规则
          */
         $.validator.setDefaults({
-            submitHandler: function () {
-                alert("提交事件!");
+            submitHandler: function (form) {
+                console.log("已完成所有验证");
+                
+                
             }
         });
         $().ready(function () {
-            $("#configform").validate();
+            $("#configform").validate({rules: rules, messages: messages});
         });
-
-
         function clean_selct() {
             $('#hide_v').val('');
             $('#show_v').val('');
         }
 
         $('#radio_fy').click(function () {
-            var c_ = $('#choose_').unbind('click').show(), h_ = $('#show_v'), panel_b = $('#show_div .panel-body').empty(), panel_show_div = $('#show_div').hide();
+            var c_ = $('#choose_').unbind('click').show(), h_ = $('#show_v'), panel_b = $('#show_div .panel-body').empty(), panel_show_div = $('#show_div');
             clean_selct();
+            bind_rever();
             $.openSelect(c_, {
                 fy: {
                     hideSelect: "#hide_v",
@@ -51,12 +78,28 @@ define(function (require, exports, module) {
                 }, onEnd: function () {
                     panel_b.text(arguments[1]);
                     panel_show_div.fadeIn();
+                    if (arguments[0]) {
+                        ajax_yz(0, arguments[0], arguments[1]);
+                    }
                 }
             });
         });
+        function ajax_yz(unitType, unit, name) {
+            $.ajax({
+                url: '/config/ajax_cf_yz', data: {unitType: unitType, unit: unit}, success: function (dat) {
+                    if (parseInt(dat) == 1) {
+                        layer.msg(name + "已有参数配置，请重新选择");
+                        $('#show_div .panel-body').empty();
+                        clean_selct();
+                    }
+                }
+            });
+        }
+
         $('#radio_dept').click(function () {
-            var c_ = $('#choose_').unbind('click').show(), h_ = $('#show_v'), panel_b = $('#show_div .panel-body').empty(), panel_show_div = $('#show_div').hide();
+            var c_ = $('#choose_').unbind('click').show(), h_ = $('#show_v'), panel_b = $('#show_div .panel-body').empty(), panel_show_div = $('#show_div');
             clean_selct();
+            bind_rever();
             $.openSelect(c_, {
                 dept: {
                     hideSelect: "#hide_v",
@@ -67,9 +110,20 @@ define(function (require, exports, module) {
                 }, onEnd: function () {
                     panel_b.text(arguments[1]);
                     panel_show_div.fadeIn();
+                    if (arguments[0]) {
+                        ajax_yz(1, arguments[0], arguments[1]);
+                    }
                 }
             });
         });
+        function bind_rever() {
+            if ($('#radio_fy :input:checked').length == 1) {
+                $('#tc_lx').text("法院");
+            } else {
+                $('#tc_lx').text("部门");
+            }
+        }
+
         // $('#configform').submit(function () {
         //     // 先假设全部验证通过
         //

@@ -20,8 +20,11 @@ public class BridgeConfigUnit extends BaseBridgeConfigUnit<BridgeConfigUnit> {
         return findFirst("select * from " + TABLENAME + " where confId=?", configTime.getId());
     }
 
-
     public String find_conId(Object unit, Long unitType) {
         return Db.queryStr("select confId from " + TABLENAME + " where unit=? and unitType=? limit 1", unit, unitType);
+    }
+
+    public Long count_by_unit_unitType(Object unit, Object unitType) {
+        return Db.queryLong("select count(0) from " + TABLENAME + " where unit=? and unitType=? ", unit, unitType);
     }
 }

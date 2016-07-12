@@ -35,4 +35,5 @@
 
     }));
 </script>
+<script type="text/javascript" src="/js/jquery.validate.metadate.js"></script>
 <%--<script type="text/javascript" src="/js/jquery-validate-ext.js"></script>--%>
