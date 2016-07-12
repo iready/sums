@@ -27,4 +27,8 @@ public class BridgeConfigUnit extends BaseBridgeConfigUnit<BridgeConfigUnit> {
     public Long count_by_unit_unitType(Object unit, Object unitType) {
         return Db.queryLong("select count(0) from " + TABLENAME + " where unit=? and unitType=? ", unit, unitType);
     }
+
+    public Long count_by_unit_unitType(Object unit, Object unitType, String cid) {
+        return Db.queryLong("select count(0) from " + TABLENAME + " where unit=? and unitType=? and cid<>?", unit, unitType, cid);
+    }
 }

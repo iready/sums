@@ -3,6 +3,7 @@ package org.lby.kq.route;
 import com.jfinal.aop.Before;
 import com.jfinal.core.Controller;
 import com.jfinal.kit.JsonKit;
+import org.apache.log4j.Logger;
 import org.lby.kq.aop.Aop_Index;
 import org.lby.kq.common.SysVar;
 import org.lby.kq.model.BridgeConfigUnit;
@@ -16,15 +17,23 @@ import java.util.Map;
 
 @Before(value = Aop_Index.class)
 public class Index extends Controller implements SysVar {
+    private static Logger logger = Logger.getLogger(Index.class);
+
     //打卡页面
     public void index() {
-        String confId = ServiceOfIndex.getConfId(this);
-        setAttr("salarys", JsonKit.toJson(Salary.dao.find_email_now((String) getSessionAttr(EMAIL))));
-        setAttr("confId", confId);
-        ConfigTime configTime = ConfigTime.dao.findById(confId);
-        if (confId != null) setAttr("c", JsonKit.toJson(configTime));
-        /*按钮显示判断*/
-        setAttr("btn_show", JsonKit.toJson(ServiceOfIndex.btn_analysis(configTime)));
+        try {
+            String confId = ServiceOfIndex.getConfId(this);
+            setAttr("salarys", JsonKit.toJson(Salary.dao.find_email_now((String) getSessionAttr(EMAIL))));
+            setAttr("confId", confId);
+            ConfigTime configTime = ConfigTime.dao.findById(confId);
+            if (confId != null) setAttr("c", JsonKit.toJson(configTime));
+            /*按钮显示判断*/
+            if (configTime != null)
+                setAttr("btn_show", JsonKit.toJson(ServiceOfIndex.btn_analysis(configTime)));
+        } catch (Exception e) {
+            e.printStackTrace();
+            logger.error(e, e);
+        }
     }
 
     /**

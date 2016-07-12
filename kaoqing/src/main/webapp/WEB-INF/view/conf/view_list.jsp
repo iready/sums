@@ -1,11 +1,9 @@
-<%@ page import="org.lby.kq.common.SysVar" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
     <jsp:include page="/WEB-INF/common/head.jsp"/>
-    <link rel="stylesheet" href="<%=SysVar.sys_In%>/js/layer/skin/layer.css"/>
-    <script src="<%=SysVar.sys_In%>/js/layer/layer.js"></script>
+    <%@include file="/WEB-INF/common/layer.jsp" %>
     <script type="text/javascript">
         function delete_(s) {
             if (window.confirm("确定删除吗")) {
@@ -46,8 +44,8 @@
             <tr class="table_click">
                 <td>${va.provider}</td>
                 <td>${va.confName}</td>
-                <td></td>
-                <td></td>
+                <td>${va.unitType==0?va.unitName:"无"}</td>
+                <td>${va.unitType==0?"无":va.unitName}</td>
                 <td>
                     <button class="button button-small bg-green" onclick="edit('${va.id}')">编辑</button>
                     <button class="button button-small bg-black" onclick="delete_('${va.id}')">删除</button>

@@ -3,16 +3,20 @@ package org.lby.kq.route;
 import com.jfinal.aop.Before;
 import com.jfinal.core.Controller;
 import com.jfinal.kit.JsonKit;
+import org.apache.log4j.Logger;
 import org.lby.kq.aop.Aop_Conf;
 import org.lby.kq.common.SysVar;
 import org.lby.kq.model.BridgeConfigUnit;
 import org.lby.kq.model.ConfigTime;
+import org.lby.kq.model.common.Manage_;
 import org.lby.kq.service.ServiceOfConf;
 
 import java.util.Date;
 
 @Before(value = Aop_Conf.class)
 public class Conf extends Controller implements SysVar {
+    private static Logger logger = Logger.getLogger(Conf.class);
+
     public void index() {
         setAttr("isEdit", false);
         setAttr("c", "0");
@@ -20,12 +24,23 @@ public class Conf extends Controller implements SysVar {
     }
 
     public void del() {
-        ConfigTime.dao.findById(getPara()).delete();
-        renderNull();
+        try {
+            ConfigTime.dao.deleteById(getPara());
+        } catch (Exception e) {
+            logger.error(e, e);
+            e.printStackTrace();
+        } finally {
+            renderNull();
+        }
     }
 
     public void view_list() {
-        setAttr("c", ServiceOfConf.for_view_list(ConfigTime.dao.find_by_fy((String) getSessionAttr(FY))));
+        try {
+            setAttr("c", ServiceOfConf.for_view_list(ConfigTime.dao.find_by_fy((String) getSessionAttr(FY))));
+        } catch (Exception e) {
+            logger.error(e, e);
+            e.printStackTrace();
+        }
     }
 
     public void save() {
@@ -57,11 +72,18 @@ public class Conf extends Controller implements SysVar {
     public void ajax_cf_yz() {
         Long ut = getParaToLong("unitType");
         String u = getPara("unit");
+        String id = getPara("id");
         try {
             if (ut != null && u != null) {
-                renderText(BridgeConfigUnit.dao.count_by_unit_unitType(u, ut) + "");
+                String render = null;
+                if (id.isEmpty())
+                    render = BridgeConfigUnit.dao.count_by_unit_unitType(u, ut) + "";
+                else
+                    render = BridgeConfigUnit.dao.count_by_unit_unitType(u, ut, id) + "";
+                renderText(render);
                 return;
             }
+
         } catch (Exception e) {
             e.printStackTrace();
         }

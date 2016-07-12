@@ -16,7 +16,11 @@ import java.util.Date;
 @Before(value = Aop_Apply.class)
 public class Application extends Controller implements SysVar {
     public void index() {
-        setAttr("a", JsonKit.toJson(Apply.dao.find_sq((String) getSessionAttr(EMAIL))));
+        try {
+            setAttr("a", JsonKit.toJson(Apply.dao.find_sq((String) getSessionAttr(EMAIL))));
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 
     public void add() {

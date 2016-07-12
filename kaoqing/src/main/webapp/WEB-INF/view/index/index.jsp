@@ -21,6 +21,7 @@
         </div>
     </c:if>
     <c:if test="${not empty confId}">
+        <br>
         <table class="table">
             <tr class="fadein-top">
                 <th colspan="4" >

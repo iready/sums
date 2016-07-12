@@ -1,8 +1,10 @@
 package org.lby.kq.model;
 
 import com.jfinal.plugin.activerecord.Db;
+import com.jfinal.plugin.activerecord.Record;
 import org.lby.kq.model.base.BaseSalary;
 
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -33,5 +35,23 @@ public class Salary extends BaseSalary<Salary> {
             sql += "and day(time_dj) in(" + days + ")";
         }
         return find(sql, unit, year, month);
+    }
+
+    /*统计*/
+    public List<Record> tj_cd_and_zt(Integer year, Integer month, String days, int unitType, String unit) {
+        StringBuffer sb = new StringBuffer();
+        List<Object> objects = new ArrayList<>();
+        if (unitType == 0) {
+            sb.append("SELECT  XM,ou.YOUXIANG," +
+                    "  sum(if(ks.type = 0 AND judge_cd(ks.time_dj, kct.first, kct.hcSb) < 0, 1, 0))  cd1," +
+                    "  sum(if(ks.type = 2 AND judge_cd(ks.time_dj, kct.third, kct.hcSb) < 0, 1, 0))  cd3," +
+                    "  sum(if(ks.type = 1 AND judge_zt(ks.time_dj, kct.second, kct.hcXb) > 0, 1, 0)) zt2," +
+                    "  sum(if(ks.type = 3 AND judge_zt(ks.time_dj, kct.fourth, kct.hcXb) > 0, 1, 0)) zt4" +
+                    "FROM kq_salary ks LEFT JOIN kq_config_time kct ON ks.confid = kct.id" +
+                    "  LEFT JOIN org_user ou ON ks.yx = ou.YOUXIANG" +
+                    "WHERE 1 = 1 AND year(time_dj) = 2016 AND month(time_dj) = 7 AND day(time_dj) IN (12)" +
+                    "GROUP BY ks.yx");
+        }
+        return Db.find(sb.toString(), objects.toArray());
     }
 }

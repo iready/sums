@@ -1,6 +1,7 @@
 package org.lby.kq.model.common;
 
 import com.jfinal.plugin.activerecord.Db;
+import org.codehaus.groovy.runtime.powerassert.SourceText;
 import org.lby.kq.common.SysVar;
 
 import java.util.ArrayList;
@@ -15,5 +16,23 @@ public class Manage_ implements SysVar {
             return new ArrayList<>();
         }
         return Arrays.asList(str.split(","));
+    }
+
+    /**
+     * 根据部门查看之高院用户能够看到基层院用户
+     *
+     * @return
+     */
+    public static String query_previw(String type, String system_type) {
+        if ("K00".equals(system_type)) {
+            return " like 'K%' ";
+        } else {
+            if (system_type.endsWith("0")) {
+                return " like '" + system_type.substring(0, 2) + "%' ";
+            } else {
+                return " like '" + system_type + "' ";
+            }
+
+        }
     }
 }

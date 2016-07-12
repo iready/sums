@@ -12,7 +12,7 @@ public class Apply extends BaseApply<Apply> {
     public static final Apply dao = new Apply();
 
     public List<Apply> find_sq(String email) {
-        return find("select * from " + TABLENAME + " where sqr=?", email);
+        return find("select ap.id, ou.xm spr,  state, ap.type, ap.time_sq from " + TABLENAME + " ap left join org_user ou on ou.YOUXIANG=ap.spr  where sqr=?", email);
     }
 
     public List<Apply> find_db(String email) {

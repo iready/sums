@@ -13,6 +13,7 @@ define(function (require, exports, module) {
         hc: ['hc_sb', 'hc_xb'],
         sx: ['confName']
     };
+    var nowId = '';
     exports.init = function () {
         var rules = {"c.confName": "required"}, messages = {"c.confName": "请输入配置名字"};
         // 脚本渲染
@@ -32,13 +33,11 @@ define(function (require, exports, module) {
                     }
                 }
                 if (i == "sb" || i == "xb" || i == "hc") {
-                    $('#' + json_form[i][0]).attr("name", json_form[i][0]);
-                    $('#' + json_form[i][1]).attr("name", json_form[i][1]);
-                    rules[json_form[i][0]] = {
+                    rules['c.' + json_form[i][0]] = {
                         required: true,
                         hour: [0, 200]
                     };
-                    rules[json_form[i][1]] = {
+                    rules['c.' + json_form[i][1]] = {
                         required: true,
                         hour: [0, 200]
                     };
@@ -51,9 +50,23 @@ define(function (require, exports, module) {
          */
         $.validator.setDefaults({
             submitHandler: function (form) {
-                console.log("已完成所有验证");
-                
-                
+                if ($('#hide_v').val().length == 0) {
+                    layer.msg("请选择部门或者法院");
+                } else {
+                    var div_con = $('#con').empty();
+                    for (var i in arr_dk) {
+                        var t1 = $('#' + json_form[arr_dk[i]][0]).val();
+                        var t2 = $('#' + json_form[arr_dk[i]][1]).val();
+                        if (t1.length == 1) {
+                            t1 = "0" + t1;
+                        }
+                        if (t2.length == 1) {
+                            t2 = "0" + t2;
+                        }
+                        div_con.append(b.new_hi(t1 + ':' + t2 + ':59').attr('name', 'c.' + arr_dk[i]));
+                    }
+                    form.submit();
+                }
             }
         });
         $().ready(function () {
@@ -86,7 +99,7 @@ define(function (require, exports, module) {
         });
         function ajax_yz(unitType, unit, name) {
             $.ajax({
-                url: '/config/ajax_cf_yz', data: {unitType: unitType, unit: unit}, success: function (dat) {
+                url: '/config/ajax_cf_yz', data: {unitType: unitType, unit: unit, id: nowId}, success: function (dat) {
                     if (parseInt(dat) == 1) {
                         layer.msg(name + "已有参数配置，请重新选择");
                         $('#show_div .panel-body').empty();
@@ -123,22 +136,9 @@ define(function (require, exports, module) {
                 $('#tc_lx').text("部门");
             }
         }
-
-        // $('#configform').submit(function () {
-        //     // 先假设全部验证通过
-        //
-        //
-        //     // 取值操作
-        //     var div_con = $('#con').empty();
-        //     for (var i in arr_dk) {
-        //         var t1 = json_form[arr_dk[i]][0];
-        //         var t2 = json_form[arr_dk[i]][1];
-        //         div_con.append(b.new_hi($('#' + t1).val() + ':' + $('#' + t2).val() + ':59').attr('name', 'c.' + arr_dk[i]));
-        //     }
-        //     return true;
-        // });
     };
     exports.edit_init = function (json, choose_unit) {
+        nowId = json.id;
         for (var i in json) {
             if ($.inArray(i, arr_dk) == -1) {
                 $('input[name="c.' + i + '"]').val(json[i]);
@@ -149,9 +149,11 @@ define(function (require, exports, module) {
             }
         }
         if (choose_unit.unitType == 0) {
-            $('#radio_fy').trigger('click');
+            $('#radio_fy input').trigger('click');
+            $('#tc_lx').text("法院");
         } else {
-            $('#radio_dept').trigger('click');
+            $('#radio_dept input').trigger('click');
+            $('#tc_lx').text("部门");
         }
         var panel_b = $('#show_div .panel-body').empty(), panel_show_div = $('#show_div').hide();
         $('#hide_v').val(choose_unit.unit);
