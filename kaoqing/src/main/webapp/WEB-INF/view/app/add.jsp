@@ -1,9 +1,10 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<!DOCTYPE>
 <html>
 <head>
     <script type="text/javascript" src="/js/laydate/laydate.js"></script>
     <jsp:include page="/WEB-INF/common/head.jsp"/>
-    <jsp:include page="/WEB-INF/common/layer.jsp"/>
+    <jsp:include page="/WEB-INF/common/validate.jsp"/>
     <script type="text/javascript">
         seajs.use('proJs/app/add', function (v) {
             v.init();
@@ -16,7 +17,7 @@
         <div class="x12">
             <input type="hidden" id="show_v"/>
             <input type="hidden" id="hide_v"/>
-            <form action="/apply/save" class="form" method="post">
+            <form action="/apply/save" class="form" id="form1" method="post">
                 <div class="panel">
                     <div class="form-group  padding">
                         <strong>类型：</strong>
@@ -27,8 +28,8 @@
                         </select>
                     </div>
                     <div class="form-group  padding">
-                        <strong>事由</strong>
-                        <textarea type="text" class="input input-auto" name="a.reason" id="reason" size="20"></textarea>
+                        <strong><strong class="text-red">* </strong>原因：</strong>
+                        <textarea type="text" class="input input-auto" name="a.reason" id="reason" cols="50"></textarea>
                     </div>
                     <div class="form-group  padding">
                         <strong>时间：</strong>
@@ -39,13 +40,13 @@
                                onclick="laydate({istime: true, format: 'YYYY-MM-DD hh:mm:ss'})" readonly size="20"/>
                     </div>
                     <div class="form-group  padding">
-                        <strong>审批人：</strong>
+                        <strong><strong class="text-red">* </strong>审批人：</strong>
                         <a class="button" id="choose" href="javascript:;">选择</a>
                         <input type="hidden" class="input input-auto" size="10" id="spr" name="a.spr"/>
                     </div>
                     <div id="div_s" class="form-group  padding">
                     </div>
-                    <input type="submit" class="button btn-block" value="提交"/>
+                    <div class="text-center"><input type="submit" class="button btn-block bg-main" value="提交"/></div>
                 </div>
             </form>
         </div>

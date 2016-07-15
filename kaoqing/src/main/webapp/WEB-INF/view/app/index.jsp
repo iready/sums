@@ -1,10 +1,10 @@
 <%@ page import="org.lby.kq.common.CLZ" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<!DOCTYPE HTML>
 <html>
 <head>
     <jsp:include page="/WEB-INF/common/head.jsp"/>
-    <%@include file="/WEB-INF/common/layer.jsp" %>
     <script type="text/javascript">
         seajs.use('proJs/app/index', function (v) {
             v.init(${a}, <%=CLZ.getJson(CLZ.apply_type)%>);
@@ -23,12 +23,15 @@
             <th>审批人</th>
             <th>申请类型</th>
             <th>申请时间</th>
-            <th>申请事由</th>
+            <th>申请原因</th>
             <th>状态</th>
             <%--<th>操作</th>--%>
         </tr>
         <tbody id="tbody"></tbody>
     </table>
+    <div id="jpage" class="container text-center" style="height: 100px">
+
+    </div>
 </div>
 </body>
 </html>

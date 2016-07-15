@@ -1,5 +1,6 @@
 package org.lby.kq.model;
 
+import com.jfinal.plugin.activerecord.Page;
 import org.lby.kq.model.base.BaseApply;
 
 import java.util.List;
@@ -12,7 +13,11 @@ public class Apply extends BaseApply<Apply> {
     public static final Apply dao = new Apply();
 
     public List<Apply> find_sq(String email) {
-        return find("select ap.id, ou.xm spr,  state, ap.type, ap.time_sq from " + TABLENAME + " ap left join org_user ou on ou.YOUXIANG=ap.spr  where sqr=?", email);
+        return find("select ap.id, ou.xm spr,state, ap.type, ap.time_sq ,ap.reason from " + TABLENAME + " ap left join org_user ou on ou.YOUXIANG=ap.spr  where sqr=?", email);
+    }
+
+    public Page<Apply> page_sq(Integer pageNumber, int pageSize, String email) {
+        return paginate(pageNumber, pageSize, "select ap.id, ou.xm spr,state, ap.type, ap.time_sq ,ap.reason ", "from " + TABLENAME + " ap left join org_user ou on ou.YOUXIANG=ap.spr  where sqr=?", email);
     }
 
     public List<Apply> find_db(String email) {

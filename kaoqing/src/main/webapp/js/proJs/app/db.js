@@ -1,5 +1,6 @@
 define(function (require, exports, module) {
     var b = require('build');
+    require('jform');
     exports.init = function (obj, type) {
         var dq = undefined;
         for (var i = 0; i < obj.length; i++) {
@@ -18,11 +19,13 @@ define(function (require, exports, module) {
             $('#tbody').append(tr);
         }
         $('#btn_sure').click(function () {
-            $.ajax({
-                url: '/apply/ajax_sp',
-                data: {id: dq, state: $(':input[name="sp"]:checked').val(), sp_reason: $('#liy').val()},
+            if ($('#liy').val() == "") {
+                alert("请输入理由");
+                return;
+            }
+            $('#my_id').val(dq);
+            $('#form1').ajaxSubmit({
                 success: function () {
-                    layer.msg(arguments[0]);
                     location.reload();
                 }
             });

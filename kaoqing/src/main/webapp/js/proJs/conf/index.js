@@ -76,7 +76,6 @@ define(function (require, exports, module) {
             $('#hide_v').val('');
             $('#show_v').val('');
         }
-
         $('#radio_fy').click(function () {
             var c_ = $('#choose_').unbind('click').show(), h_ = $('#show_v'), panel_b = $('#show_div .panel-body').empty(), panel_show_div = $('#show_div');
             clean_selct();
@@ -87,7 +86,7 @@ define(function (require, exports, module) {
                     showSelect: "#show_v",
                     hideType: "fy",
                     showType: "name",
-                    selectedMulti: true
+                    selectedMulti: false
                 }, onEnd: function () {
                     panel_b.text(arguments[1]);
                     panel_show_div.fadeIn();
@@ -119,7 +118,7 @@ define(function (require, exports, module) {
                     showSelect: "#show_v",
                     hideType: "id",
                     showType: "name",
-                    selectedMulti: true
+                    selectedMulti: false
                 }, onEnd: function () {
                     panel_b.text(arguments[1]);
                     panel_show_div.fadeIn();

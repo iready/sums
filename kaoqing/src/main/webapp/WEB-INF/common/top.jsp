@@ -5,17 +5,16 @@
     <div class="container">
         <div class="line">
             <div class="x8">
+                <%=session.getAttribute(SysVar.DEPT_NAME) + "  " + session.getAttribute(SysVar.USER_NAME)%>
                 欢迎使用考勤系统
             </div>
         </div>
     </div>
 </div>
 <div class="container" style="padding: 10px 0">
-    <button class="button icon-navicon" data-target="#nav-pills6">
-    </button>
-    <ul class="nav nav-menu nav-inline nav-pills nav-justified nav-big nav-navicon  border-yellow" id="nav-pills6">
+        <ul class="nav nav-menu nav-inline nav-main nav-justified nav-navicon border-red"   id="nav-pills6">
 
-    </ul>
+        </ul>
 </div>
 <script type="text/javascript">
     seajs.use('proJs/head', function (v) {

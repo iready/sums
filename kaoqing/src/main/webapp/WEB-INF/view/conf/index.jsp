@@ -1,10 +1,9 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<!DOCTYPE HTML>
 <html>
 <head>
     <jsp:include page="/WEB-INF/common/head.jsp"/>
-    <%@include file="/WEB-INF/common/layer.jsp" %>
     <%@include file="/WEB-INF/common/validate.jsp" %>
-    <script type="text/javascript" src="/js/proJs/conf/additional-methods.js"></script>
     <script type="text/javascript">
         seajs.use('proJs/conf/index', function (v) {
             v.init();
@@ -13,7 +12,15 @@
             } catch (e) {
 
             }
-        })
+        });
+        $.validator.addMethod("hour", function (value, element, param) {
+            value = parseInt(value);
+            if (!isNaN(value)) {
+                $(element).val(value);
+                return value >= param[0] && value <= param[1];
+            }
+            return false;
+        }, $.validator.format("请输入{0}-{1}之间的数字"));
     </script>
 </head>
 <body>
@@ -40,7 +47,7 @@
                                 <div class="panel-body">
                                     <div class="form-group">
                                         <strong class="text-red">* </strong><strong>当前配置名字：</strong>
-                                        <input type="text"  name="c.confName" autocomplete="off"
+                                        <input type="text" name="c.confName" autocomplete="off"
                                                id="confName"
                                                size="20"/>
                                     </div>
@@ -125,6 +132,7 @@
                             </div>
                         </div>
                         <div style="display:none" id="con"></div>
+                    </div>
                 </form>
             </div>
         </div>

@@ -17,7 +17,7 @@ import java.util.Date;
 public class Application extends Controller implements SysVar {
     public void index() {
         try {
-            setAttr("a", JsonKit.toJson(Apply.dao.find_sq((String) getSessionAttr(EMAIL))));
+            setAttr("a", JsonKit.toJson(Apply.dao.page_sq(getParaToInt("page", 1), getParaToInt("pageSize", 10), (String) getSessionAttr(EMAIL))));
         } catch (Exception e) {
             e.printStackTrace();
         }

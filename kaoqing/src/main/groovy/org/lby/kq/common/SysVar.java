@@ -14,7 +14,7 @@ public interface SysVar {
     String RYBS = "RYBS_";// 人员标识
     String FY = "FY_";// 法院
     String ZW = "ZW_";// 职务
-
+    String DEPT_NAME = "dept_name_____";//全名
     String BASE = "base__";
     String KQ = "kq__";
 

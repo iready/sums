@@ -3,10 +3,9 @@ define(function (require, exports, module) {
     var b = require('build');
     var arr_unit = ['法院', '部门'];
     require('jform');
+    require('suser');
     var json_cont = undefined;
-
     exports.init = function (json) {
-        console.log(json);
         json_cont = json;
         var j = json.yx_year.split(',');
         for (var i in j) {
@@ -152,6 +151,32 @@ define(function (require, exports, module) {
             } catch (e) {
                 console.log(e);
             }
-        });
+        }).trigger('click');
+        $('#other_fy').unbind('click');
+        if (getUnitType() == 0) {
+            $.openSelect('#other_fy', {
+                fy: {
+                    hideSelect: "#hide_v",
+                    showSelect: "#show_v",
+                    hideType: "fy",
+                    showType: "name",
+                    selectedMulti: false
+                }, onEnd: function () {
+                    set_unit(arguments[1], arguments[0])
+                }
+            });
+        } else {
+            $.openSelect('#other_fy', {
+                dept: {
+                    hideSelect: "#hide_v",
+                    showSelect: "#show_v",
+                    hideType: "id",
+                    showType: "name",
+                    selectedMulti: false
+                }, onEnd: function () {
+                    set_unit(arguments[1], arguments[0])
+                }
+            });
+        }
     }
 });

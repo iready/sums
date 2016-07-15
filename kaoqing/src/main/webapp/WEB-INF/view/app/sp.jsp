@@ -1,6 +1,7 @@
 <%@ page import="org.lby.kq.common.CLZ" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<!DOCTYPE HTML>
 <html>
 <head>
     <jsp:include page="/WEB-INF/common/head.jsp"/>

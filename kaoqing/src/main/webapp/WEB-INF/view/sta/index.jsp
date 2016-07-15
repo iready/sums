@@ -1,9 +1,10 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<!DOCTYPE HTML>
 <html>
 <head>
     <jsp:include page="/WEB-INF/common/head.jsp"/>
-    <%@include file="/WEB-INF/common/layer.jsp" %>
+    <%@include file="/WEB-INF/common/validate.jsp" %>
     <script type="text/javascript">
         seajs.use('proJs/sta/index', function (v) {
             v.init(${r});
@@ -19,6 +20,8 @@
 <body>
 <jsp:include page="/WEB-INF/common/top.jsp"/>
 <div class="container">
+    <input id="show_v" type="hidden"/>
+    <input id="hide_v" type="hidden"/>
     <div class="line">
         <div class="x12">
             <form id="form1" action="/statistics/execl_dc" method="post">
@@ -43,12 +46,12 @@
                                 <div class="panel-head"><strong>已选择的</strong><strong class="cunit">法院</strong>
                                     <div class="ph_btn ">
                                         <input type="button" class="button cunit bg-main" id="btn_selunit" value="本法院"/>
-                                        <input type="button" class="button cunit" value="选择其它法院"/>
+                                        <input type="button" class="button cunit" id="other_fy" value="选择其它法院"/>
                                     </div>
                                 </div>
                                 <div class="panel-body" id="div_choose"></div>
                             </div>
-                            <input value="" ID="unit" name="unit" type="hidden"/>
+                            <input id="unit" name="unit" type="hidden"/>
                         </div>
                         <div class="form-group">
                             <strong>统计时间：</strong>

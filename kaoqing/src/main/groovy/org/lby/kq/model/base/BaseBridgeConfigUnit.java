@@ -19,13 +19,13 @@ public abstract class BaseBridgeConfigUnit<M extends BaseBridgeConfigUnit<M>> ex
 		return get("id");
 	}
 
-	public M setUnit(java.lang.String unit) {
-		set("unit", unit);
+	public M setConfId(java.lang.String confId) {
+		set("confId", confId);
 	return (M)this;
 }
 
-	public java.lang.String getUnit() {
-		return get("unit");
+	public java.lang.String getConfId() {
+		return get("confId");
 	}
 
 	public M setUnitType(java.lang.Integer unitType) {
@@ -37,13 +37,13 @@ public abstract class BaseBridgeConfigUnit<M extends BaseBridgeConfigUnit<M>> ex
 		return get("unitType");
 	}
 
-	public M setConfId(java.lang.String confId) {
-		set("confId", confId);
+	public M setUnit(java.lang.String unit) {
+		set("unit", unit);
 	return (M)this;
 }
 
-	public java.lang.String getConfId() {
-		return get("confId");
+	public java.lang.String getUnit() {
+		return get("unit");
 	}
 
 	public M setUnitName(java.lang.String unitName) {
