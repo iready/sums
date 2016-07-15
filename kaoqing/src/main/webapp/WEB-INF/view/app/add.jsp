@@ -11,7 +11,6 @@
     </script>
 </head>
 <body>
-<jsp:include page="/WEB-INF/common/top.jsp"/>
 <div class="container">
     <div class="line">
         <div class="x12">
@@ -20,16 +19,16 @@
             <form action="/apply/save" class="form" method="post">
                 <div class="panel">
                     <div class="form-group  padding">
-                        <strong>事由</strong>
-                        <input type="text" class="input input-auto" name="a.reason" id="reason" size="20"/>
-                    </div>
-                    <div class="form-group  padding">
                         <strong>类型：</strong>
                         <select name="a.type" class="input input-auto">
                             <option value="0">外出</option>
                             <option value="1">请假</option>
                             <option value="2">出差</option>
                         </select>
+                    </div>
+                    <div class="form-group  padding">
+                        <strong>事由</strong>
+                        <textarea type="text" class="input input-auto" name="a.reason" id="reason" size="20"></textarea>
                     </div>
                     <div class="form-group  padding">
                         <strong>时间：</strong>
@@ -45,9 +44,8 @@
                         <input type="hidden" class="input input-auto" size="10" id="spr" name="a.spr"/>
                     </div>
                     <div id="div_s" class="form-group  padding">
-
                     </div>
-                    <input type="submit" class="button btn-block" value="保存"/>
+                    <input type="submit" class="button btn-block" value="提交"/>
                 </div>
             </form>
         </div>

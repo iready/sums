@@ -37,7 +37,7 @@
         <!-- 客户端应用服务地址 -->
         <init-param>
             <param-name>serverName</param-name>
-            <param-value>147.1.7.99:8195</param-value>
+            <param-value>147.1.7.11:8195</param-value>
         </init-param>
         <init-param>
             <param-name>renew</param-name>
@@ -57,7 +57,7 @@
         </init-param>
         <init-param>
             <param-name>serverName</param-name>
-            <param-value>147.1.7.99:8195</param-value>
+            <param-value>147.1.7.11:8195</param-value>
         </init-param>
         <init-param>
             <param-name>encoding</param-name>
@@ -91,7 +91,7 @@
     <!-- 退出URL -->
     <context-param>
         <param-name>casLogoutUrl</param-name>
-        <param-value>http://147.1.6.16:8080/cas/logout?service=http://147.1.7.99:8195</param-value>
+        <param-value>http://147.1.6.16:8080/cas/logout?service=http://147.1.7.11:8195</param-value>
     </context-param>
     <!-- ======================CAS 设置 End======================= -->
     <filter>

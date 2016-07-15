@@ -3,51 +3,98 @@
 <html>
 <head>
     <jsp:include page="/WEB-INF/common/head.jsp"/>
+    <%@include file="/WEB-INF/common/layer.jsp" %>
     <script type="text/javascript">
         seajs.use('proJs/sta/index', function (v) {
-            v.init();
+            v.init(${r});
         });
     </script>
+    <style rel="stylesheet">
+        .ph_btn {
+            float: right;
+            margin-top: -7px;
+        }
+    </style>
 </head>
 <body>
 <jsp:include page="/WEB-INF/common/top.jsp"/>
 <div class="container">
     <div class="line">
         <div class="x12">
-            <form id="form1" method="post">
+            <form id="form1" action="/statistics/execl_dc" method="post">
                 <div class="panel" style="margin-right: 5px;">
                     <div class="panel-head">
                         <strong>统计</strong>
+                        <div class="ph_btn">
+                            <input class="button bg-main" type="button" id="excel_submit" value="导出EXCEL数据"/>
+                            <input class="button bg-blue" type="button" id="btn_sure" value="确定"/>
+                        </div>
                     </div>
                     <div class="panel-body">
                         <div class="form-group">
-                            <strong>统计类型</strong>
-                            <label >
+                            <strong>统计类型：</strong>
+                            <label>
                                 <input name="unitType" value="0" checked="checked" type="radio">法院
                             </label>
-                            <label >
+                            <label>
                                 <input name="unitType" value="1" type="radio">部门
                             </label>
-                            <input value="K00" ID="unit" name="unit"/>
-                        </div>
-                        <div class="form-group">
-                            <strong>统计时间</strong>
-                        </div>
-                        <div>
-                            <input type="text" id="year" name="year" class="input-auto input" size="5" value="2016"/>年
-                            <input type="text" id="month" name="month" class="input-auto input" size="5" value="7"/>月
-                            <input type="button" class="button" value="锁定日期" id="sd"/>
-                            <input type="hidden" name="i_days" id="i_days"/>
-                            <div id="days">
-
+                            <div class="panel" style="margin: 10px">
+                                <div class="panel-head"><strong>已选择的</strong><strong class="cunit">法院</strong>
+                                    <div class="ph_btn ">
+                                        <input type="button" class="button cunit bg-main" id="btn_selunit" value="本法院"/>
+                                        <input type="button" class="button cunit" value="选择其它法院"/>
+                                    </div>
+                                </div>
+                                <div class="panel-body" id="div_choose"></div>
                             </div>
+                            <input value="" ID="unit" name="unit" type="hidden"/>
                         </div>
                         <div class="form-group">
-                            <input class="button btn-main" type="submit" value="确定"/>
+                            <strong>统计时间：</strong>
+                        </div>
+                        <div class="panel" style="margin: 10px;">
+                            <div class="panel-head ">
+                                <strong>统计日期：</strong>
+                                <select id="year" name="year"></select>年
+                                <select id="month" name="month"></select>月
+                                <div class="ph_btn">
+                                    <input type="button" class="button" value="锁定日期" id="sd"/></div>
+                            </div>
+                            <div class="panel-body">
+                                <input type="hidden" name="i_days" id="i_days"/>
+                                <table class="table table-bordered">
+                                    <tr id="tr_d">
+                                        <th>星期一</th>
+                                        <th>星期二</th>
+                                        <th>星期三</th>
+                                        <th>星期四</th>
+                                        <th>星期五</th>
+                                        <th>星期六</th>
+                                        <th>星期日</th>
+                                    </tr>
+                                    <tbody id="dbody"></tbody>
+                                </table>
+                            </div>
                         </div>
                     </div>
                 </div>
             </form>
+            <div>
+                <table class="table">
+                    <tr>
+                        <td>部门</td>
+                        <td>姓名</td>
+                        <td>迟到次数</td>
+                        <td>早退次数</td>
+                        <td>旷工天数</td>
+                        <td>外出（天）</td>
+                        <td>请假（天）</td>
+                        <td>出差（天）</td>
+                    </tr>
+                    <tbody id="t_body"></tbody>
+                </table>
+            </div>
         </div>
     </div>
 </div>

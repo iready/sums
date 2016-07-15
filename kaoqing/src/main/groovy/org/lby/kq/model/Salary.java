@@ -54,4 +54,12 @@ public class Salary extends BaseSalary<Salary> {
         }
         return Db.find(sb.toString(), objects.toArray());
     }
+
+    public String days() {
+        String s = Db.queryStr("select group_concat(DISTINCT year(time_dj))  from kq_salary");
+        if (s == null || s.isEmpty()) {
+            s = "2016";
+        }
+        return s;
+    }
 }

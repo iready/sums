@@ -22,6 +22,7 @@ public class Config extends JFinalConfig {
         prop = PropKit.use("db.properties");
     }
 
+
     public static DruidPlugin druidFactory(DruidPlugin druidPlugin) {
         return druidPlugin.setValidationQuery("SELECT 1").set(5, 1, 20).setMaxActive(40).setMaxWait(10000).setValidationQuery("select 1").setTestOnBorrow(true).setTestWhileIdle(true).setTimeBetweenEvictionRunsMillis(10000);
     }
