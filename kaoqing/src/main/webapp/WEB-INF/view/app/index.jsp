@@ -20,12 +20,15 @@
     <hr class="bg-gray"/>
     <table class="table ">
         <tr>
-            <th>审批人</th>
+            <th>序号</th>
             <th>申请类型</th>
             <th>申请时间</th>
+            <th>申请时间区间</th>
             <th>申请原因</th>
-            <th>状态</th>
-            <%--<th>操作</th>--%>
+            <th>审批人</th>
+            <th>审批状态</th>
+            <th>审批时间</th>
+            <th>审批理由</th>
         </tr>
         <tbody id="tbody"></tbody>
     </table>

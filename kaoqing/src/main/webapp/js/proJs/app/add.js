@@ -27,7 +27,7 @@ define(function (require, exports, module) {
                 }
                 $('#form1').ajaxSubmit({
                     success: function () {
-                        window.parent.layer.closeAll();
+                        history.go(-1);
                     }
                 });
             }

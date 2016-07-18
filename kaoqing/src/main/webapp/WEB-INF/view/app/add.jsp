@@ -1,5 +1,5 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<!DOCTYPE>
+<!DOCTYPE HTML>
 <html>
 <head>
     <script type="text/javascript" src="/js/laydate/laydate.js"></script>
@@ -12,7 +12,12 @@
     </script>
 </head>
 <body>
+<jsp:include page="/WEB-INF/common/top.jsp"/>
 <div class="container">
+    <div class="line">
+        <a href="javascript:;" onclick="history.go(-1);" class="fadein-top button bg-blue">返回</a>
+    </div>
+    <hr class="bg-gray"/>
     <div class="line">
         <div class="x12">
             <input type="hidden" id="show_v"/>
@@ -20,7 +25,7 @@
             <form action="/apply/save" class="form" id="form1" method="post">
                 <div class="panel">
                     <div class="form-group  padding">
-                        <strong>类型：</strong>
+                        <strong><strong class="text-red">* </strong>类型：</strong>
                         <select name="a.type" class="input input-auto">
                             <option value="0">外出</option>
                             <option value="1">请假</option>
@@ -32,7 +37,7 @@
                         <textarea type="text" class="input input-auto" name="a.reason" id="reason" cols="50"></textarea>
                     </div>
                     <div class="form-group  padding">
-                        <strong>时间：</strong>
+                        <strong><strong class="text-red">* </strong>时间：</strong>
                         <input type="text" name="a.time_start"
                                onclick="laydate({istime: true, format: 'YYYY-MM-DD hh:mm:ss'})" id="i_start"
                                class="input input-auto" readonly size="20"/>--

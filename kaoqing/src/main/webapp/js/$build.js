@@ -24,4 +24,19 @@ define(function (require, exports, module) {
     exports.new_a = function () {
         return $('<a></a>');
     };
+    exports.new_span = function (str) {
+        var td = $('<span></span>');
+        if (typeof str != "undefined" || str != '')td.text(str);
+        return td;
+    };
+    exports.sub_cont = function (cont, length, append) {
+        if (typeof cont == "string") {
+            return cont.substr(0, length) + (cont.length > length && typeof append != "undefined" ? append : "");
+        }
+        return "";
+    };
+    exports.time_format = function (time) {
+        time = new Date(time);
+        return time.getFullYear() + '-' + (time.getMonth() + 1) + '-' + time.getDate();
+    };
 });

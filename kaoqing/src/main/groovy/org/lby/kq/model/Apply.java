@@ -17,7 +17,7 @@ public class Apply extends BaseApply<Apply> {
     }
 
     public Page<Apply> page_sq(Integer pageNumber, int pageSize, String email) {
-        return paginate(pageNumber, pageSize, "select ap.id, ou.xm spr,state, ap.type, ap.time_sq ,ap.reason ", "from " + TABLENAME + " ap left join org_user ou on ou.YOUXIANG=ap.spr  where sqr=?", email);
+        return paginate(pageNumber, pageSize, "select ap.*,ou.xm sprxm", "from " + TABLENAME + " ap left join org_user ou on ou.YOUXIANG=ap.spr  where sqr=? order by ap.time_sq desc", email);
     }
 
     public List<Apply> find_db(String email) {

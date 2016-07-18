@@ -9,7 +9,7 @@
     <jsp:include page="/WEB-INF/common/head.jsp"/>
     <script type="text/javascript">
         seajs.use('proJs/index/index', function (v) {
-            v.init(${c},<%=System.currentTimeMillis()%>,${salarys},${btn_show});
+            v.init(${empty c?'undefined':c}, <%=System.currentTimeMillis()%>, ${empty salarys?'undefined':salarys}, ${empty btn_show?'undefined':btn_show});
         })
     </script>
 </head>
@@ -25,7 +25,7 @@
         <br>
         <table class="table">
             <tr class="fadein-top">
-                <th colspan="4" >
+                <th colspan="4">
                     日期：<%=new SimpleDateFormat("yyyy年MM月dd日").format(new Date()) + " " + T.getWeekOfDate(new Date())%>
                 </th>
             </tr>
@@ -38,6 +38,12 @@
             <tbody id="tb_1"></tbody>
         </table>
     </c:if>
+</div>
+<div class="container" id="sm" style="display: none">
+    <blockquote>
+        <strong class="text-red">打卡说明：</strong>
+        <p id="px"></p>
+    </blockquote>
 </div>
 </body>
 </html>
