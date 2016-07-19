@@ -4,7 +4,6 @@ define(function (require, exports, module) {
     exports.init = function (obj, type) {
         var arr_state = {0: "未审批", 1: "审批通过", 2: '审批未通过'};
         var arr_state_color = ['text-gray', 'text-green', 'text-red'];
-        console.log(obj);
         var option = {
             firstPage: obj.firstPage,
             lastPage: obj.lastPage,

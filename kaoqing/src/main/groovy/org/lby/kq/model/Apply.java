@@ -1,7 +1,9 @@
 package org.lby.kq.model;
 
+import com.jfinal.plugin.activerecord.Db;
 import com.jfinal.plugin.activerecord.Page;
 import org.lby.kq.model.base.BaseApply;
+import org.zyq.core.lang.NumberUtils;
 
 import java.util.List;
 
@@ -12,19 +14,20 @@ import java.util.List;
 public class Apply extends BaseApply<Apply> {
     public static final Apply dao = new Apply();
 
-    public List<Apply> find_sq(String email) {
-        return find("select ap.id, ou.xm spr,state, ap.type, ap.time_sq ,ap.reason from " + TABLENAME + " ap left join org_user ou on ou.YOUXIANG=ap.spr  where sqr=?", email);
-    }
 
     public Page<Apply> page_sq(Integer pageNumber, int pageSize, String email) {
         return paginate(pageNumber, pageSize, "select ap.*,ou.xm sprxm", "from " + TABLENAME + " ap left join org_user ou on ou.YOUXIANG=ap.spr  where sqr=? order by ap.time_sq desc", email);
     }
 
     public List<Apply> find_db(String email) {
-        return find("select * from " + TABLENAME + " where spr=? and state=0", email);
+        return find("select ap.*,ou.xm sqrxm from " + TABLENAME + "  ap left join org_user ou on ou.YOUXIANG=ap.sqr where ap.spr=? and ap.state=0  order by ap.time_sq desc", email);
     }
 
-    public List<Apply> find_sp(String email) {
-        return find("select * from " + TABLENAME + " where spr=? and state<>0 order by time_sp desc", email);
+    public int db_count(String email) {
+        return NumberUtils.toInt(Db.queryLong("select count(0) c from " + TABLENAME + " where spr=? and state=0", email));
+    }
+
+    public Page<Apply> page_sp(Integer pageNumber, int pageSize, String email) {
+        return paginate(pageNumber, pageSize, "select ap.*,ou.xm sprxm", "from " + TABLENAME + " ap left join org_user ou on ou.YOUXIANG=ap.spr   where ap.spr=?  and state<>0  order by ap.time_sp desc", email);
     }
 }

@@ -36,6 +36,7 @@ define(function (require, exports, module) {
         return "";
     };
     exports.time_format = function (time) {
+        time = time.replace(/-/g, "/");
         time = new Date(time);
         return time.getFullYear() + '-' + (time.getMonth() + 1) + '-' + time.getDate();
     };

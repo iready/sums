@@ -45,7 +45,11 @@ public class Application extends Controller implements SysVar {
      * 审批
      */
     public void sp() {
-        setAttr("a", JsonKit.toJson(ServiceOfApplication.for_sp(this)));
+        try {
+            setAttr("a", JsonKit.toJson(Apply.dao.page_sp(getParaToInt("page", 1), getParaToInt("pageSize", 10), (String) getSessionAttr(EMAIL))));
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 
     /**
@@ -69,7 +73,11 @@ public class Application extends Controller implements SysVar {
      * 待办
      */
     public void db() {
-        setAttr("a", JsonKit.toJson(ServiceOfApplication.for_db(this)));
+        try {
+            setAttr("a", JsonKit.toJson(Apply.dao.find_db((String) getSessionAttr(EMAIL))));
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 
 }
