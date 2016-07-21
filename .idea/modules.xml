@@ -12,6 +12,9 @@
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/kaoqing/kaoqing_main.iml" filepath="$PROJECT_DIR$/.idea/modules/kaoqing/kaoqing_main.iml" group="kaoqing" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/kaoqing/kaoqing_test.iml" filepath="$PROJECT_DIR$/.idea/modules/kaoqing/kaoqing_test.iml" group="kaoqing" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/sms/sms.iml" filepath="$PROJECT_DIR$/.idea/modules/sms/sms.iml" group="sms" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/sms12368/sms12368.iml" filepath="$PROJECT_DIR$/.idea/modules/sms12368/sms12368.iml" group="sms12368" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/sms12368/sms12368_main.iml" filepath="$PROJECT_DIR$/.idea/modules/sms12368/sms12368_main.iml" group="sms12368" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/sms12368/sms12368_test.iml" filepath="$PROJECT_DIR$/.idea/modules/sms12368/sms12368_test.iml" group="sms12368" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/sms/sms_main.iml" filepath="$PROJECT_DIR$/.idea/modules/sms/sms_main.iml" group="sms" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/sms/sms_test.iml" filepath="$PROJECT_DIR$/.idea/modules/sms/sms_test.iml" group="sms" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/sums.iml" filepath="$PROJECT_DIR$/.idea/modules/sums.iml" />

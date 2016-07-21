@@ -5,6 +5,9 @@ import com.jfinal.plugin.activerecord.Db
 import com.jfinal.plugin.activerecord.ICallback
 import com.jfinal.plugin.activerecord.Record
 import org.apache.log4j.Logger
+import org.apache.poi.hssf.usermodel.HSSFCellStyle
+import org.apache.poi.ss.usermodel.CellStyle
+import org.apache.poi.ss.usermodel.Font
 import org.apache.poi.ss.usermodel.Row
 import org.apache.poi.ss.usermodel.Sheet
 import org.apache.poi.ss.usermodel.Workbook
@@ -89,12 +92,20 @@ class ServiceOfSta {
             }
             if (records != null) {
                 println records
+                CellStyle cellStyle = workbook.createCellStyle();
+                cellStyle.setWrapText(true);
+                cellStyle.setVerticalAlignment(HSSFCellStyle.VERTICAL_CENTER);
+                cellStyle.setAlignment(HSSFCellStyle.ALIGN_CENTER);
+                cellStyle.setBorderBottom((short) 1);
+                cellStyle.setBorderRight((short) 1);
+                Font font = workbook.createFont();
+                font.setFontName("宋体");
+                font.setFontHeightInPoints((short) 11);
+                cellStyle.setFont(font);
                 for (int i = 0; i < records.size(); i++) {
                     Row row = sheet.createRow(i + 1);
                     Record record = records.get(i);
-                    POIUtils.batchSetView(row, 0, record.getStr("dept_name"), record.getStr("XM"), NumberUtils.toInt(record.get('cd1')) + NumberUtils.toInt(record.get("cd3")),
-                            NumberUtils.toInt(record.get('zt2')) + NumberUtils.toInt(record.get('zt4')), record.get('kg'), record.get('wc') == null ? '0' : record.get('wc'), record.get('qj') == null ? '0' : record.get('qj'), record.get('cc') == null ? '0' : record.get('cc')
-                    );
+                    POIUtils.batchSetView(row, 0, cellStyle, record.getStr("dept_name"), record.getStr("XM"), NumberUtils.toInt(record.get('cd1')) + NumberUtils.toInt(record.get("cd3")), NumberUtils.toInt(record.get('zt2')) + NumberUtils.toInt(record.get('zt4')), record.get('kg'), record.get('wc') == null ? '0' : record.get('wc'), record.get('qj') == null ? '0' : record.get('qj'), record.get('cc') == null ? '0' : record.get('cc'));
                 }
                 File dest = new File(FUtils.getTempDir(), new DateTime().toString('yyyy-MM-dd') + '考勤记录导出.xls');
                 POIUtils.saveFile(workbook, dest);

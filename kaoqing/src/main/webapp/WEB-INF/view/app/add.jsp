@@ -7,7 +7,7 @@
     <jsp:include page="/WEB-INF/common/validate.jsp"/>
     <script type="text/javascript">
         seajs.use('proJs/app/add', function (v) {
-            v.init();
+            v.init('${mt}');
         });
     </script>
 </head>

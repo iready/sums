@@ -63,7 +63,7 @@ define(function (require, exports, module) {
                         if (t2.length == 1) {
                             t2 = "0" + t2;
                         }
-                        div_con.append(b.new_hi(t1 + ':' + t2 + ':59').attr('name', 'c.' + arr_dk[i]));
+                        div_con.append(b.new_hi(t1 + ':' + t2 + ':00').attr('name', 'c.' + arr_dk[i]));
                     }
                     form.submit();
                 }

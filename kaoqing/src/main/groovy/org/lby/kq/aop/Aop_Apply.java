@@ -11,11 +11,11 @@ public class Aop_Apply implements Interceptor, SysVar {
     public void intercept(Invocation invocation) {
         String actionkey = invocation.getActionKey().replaceAll(invocation.getControllerKey() + "/", "");
         if (actionkey.contains("sp")) {
-            invocation.getController().getRequest().setAttribute(route_name, 2);
-        } else if (actionkey.contains("db")) {
             invocation.getController().getRequest().setAttribute(route_name, 3);
+        } else if (actionkey.contains("db")) {
+            invocation.getController().getRequest().setAttribute(route_name, 4);
         } else
-            invocation.getController().getRequest().setAttribute(route_name, 1);
+            invocation.getController().getRequest().setAttribute(route_name, 2);
         invocation.invoke();
     }
 }

@@ -20,8 +20,8 @@ public interface SysVar {
 
     String route_name = "_route_name";
     String route_index = "_index";
-    String[] menu_name = new String[]{"我要打卡", "我的申请", "我的审批", "我的待办", "统计", "参数配置", "权限管理"};
-    String[] menu_url = new String[]{"/", "/apply", "/apply/sp", "/apply/db", "/statistics", "/config/view_list", "http://147.1.4.53:8008/admin/home/kq"};
+    String[] menu_name = new String[]{"我要打卡", "查询", "我的申请", "我的审批", "我的待办", "统计", "参数配置", "权限管理"};
+    String[] menu_url = new String[]{"/", "/select", "/apply", "/apply/sp", "/apply/db", "/statistics", "/config/view_list", "http://147.1.4.53:8008/admin/home/kq"};
 
     String role_qx = "kq";
     String PERMIS = "pri$$";

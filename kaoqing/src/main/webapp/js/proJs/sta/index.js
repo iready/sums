@@ -20,9 +20,9 @@ define(function (require, exports, module) {
         $(':input[name="unitType"]').click(init_btn_unit);
         init_btn_unit();
         $('#btn_selunit').trigger('click');
-        day_init(json.now_year, json.now_month, json.max_day, json.first_week);
         $('#year').val(json.now_year);
         $('#month').val(json.now_month);
+        day_init(json.now_year, json.now_month, json.max_day, json.first_week);
         $('#tr_d th').click(function () {
             var t = $(this).index();
             $('#dbody tr').each(function () {
@@ -77,6 +77,9 @@ define(function (require, exports, module) {
                 data: {year: $('#year').val(), month: $('#month').val()},
                 success: function (dat) {
                     day_init($('#year').val(), $('#month').val(), dat.day_max, dat.first_week);
+                    if (json_cont.now_year == $('#year').val() && json_cont.now_month == $('#month').val()) {
+                        console.log(12);
+                    }
                     $('#tr_d th:lt(5)').trigger('click');
                 }
                 , dataType: "json"
@@ -119,6 +122,9 @@ define(function (require, exports, module) {
                 break;
             }
             $('#dbody').append(tr);
+        }
+        if (json_cont.now_year == $('#year').val() && json_cont.now_month == $('#month').val()) {
+
         }
     }
 

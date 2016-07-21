@@ -11,7 +11,7 @@ public class Aop_Statistics implements Interceptor, SysVar {
 
     @Override
     public void intercept(Invocation invocation) {
-        invocation.getController().getRequest().setAttribute(route_name, 4);
+        invocation.getController().getRequest().setAttribute(route_name, 5);
         invocation.invoke();
     }
 }

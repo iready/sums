@@ -15,6 +15,7 @@
           <element id="library" level="project" name="Gradle: org.codehaus.groovy:groovy:2.4.5" />
           <element id="library" level="project" name="Gradle: log4j:log4j:1.2.17" />
           <element id="library" level="project" name="Gradle: com.jfinal:jfinal:2.2.6" />
+          <element id="library" level="project" name="Gradle: org.zyq.utils:core:0.58" />
           <element id="library" level="project" name="Gradle: tool:tool:0.1" />
           <element id="library" level="project" name="Gradle: cos:cos:26Dec2008" />
           <element id="library" level="project" name="Gradle: org.web.s:servlet-api:1.0" />
@@ -33,7 +34,6 @@
           <element id="library" level="project" name="Gradle: commons-logging:commons-logging:1.1" />
           <element id="library" level="project" name="Gradle: commons-codec:commons-codec:1.9" />
           <element id="library" level="project" name="Gradle: javax.servlet:servlet-api:2.3" />
-          <element id="file-copy" path="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.zyq.utils/core/0.58/f46e1ff77fb0ec8377b5198424a1f8738670d7aa/core-0.58.jar" />
         </element>
       </element>
       <element id="directory" name="META-INF">

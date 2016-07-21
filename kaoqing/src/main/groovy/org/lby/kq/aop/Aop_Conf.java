@@ -8,7 +8,7 @@ public class Aop_Conf implements Interceptor, SysVar {
 
     @Override
     public void intercept(Invocation invocation) {
-        invocation.getController().getRequest().setAttribute(route_name, 5);
+        invocation.getController().getRequest().setAttribute(route_name, 6);
         invocation.invoke();
     }
 }

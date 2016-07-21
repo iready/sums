@@ -34,7 +34,7 @@
                     <div class="panel-head">
                         <strong>配置参数</strong>
                         <div style="float:right;margin:-8px 3px 0px 0px">
-                            <input type="button" value="快速应用设置" class="button">
+                            <%--<input type="button" value="快速应用设置" class="button">--%>
                             <input class="button bg-sub fadein-right" type="submit" value="保存"/>
                         </div>
                     </div>

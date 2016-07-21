@@ -60,6 +60,9 @@ public class Statistics extends Controller implements SysVar {
         ServiceOfSta.for_sure_tj(year, month, unit, type, days, this);
     }
 
+    /**
+     * 确定导出
+     */
     public void execl_dc() {
         Integer type = getParaToInt("unitType");
         String unit = getPara("unit");

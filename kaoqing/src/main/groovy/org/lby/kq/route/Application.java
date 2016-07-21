@@ -3,6 +3,7 @@ package org.lby.kq.route;
 import com.jfinal.aop.Before;
 import com.jfinal.core.Controller;
 import com.jfinal.kit.JsonKit;
+import org.joda.time.DateTime;
 import org.lby.kq.aop.Aop_Apply;
 import org.lby.kq.common.SysVar;
 import org.lby.kq.model.Apply;
@@ -24,7 +25,7 @@ public class Application extends Controller implements SysVar {
     }
 
     public void add() {
-
+        setAttr("mt", new DateTime().plusDays(1).toString("yyyy-MM-dd 08:00:00"));
     }
 
     /**

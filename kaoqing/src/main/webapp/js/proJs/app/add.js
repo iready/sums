@@ -2,6 +2,7 @@ define(function (require, exports, module) {
     require('suser');
     require('jform');
     exports.init = function (obj) {
+        $('#i_start').val(obj);
         var rules = {
             "a.reason": {
                 required: true
@@ -15,8 +16,8 @@ define(function (require, exports, module) {
         }, messages = {"a.reason": "必须填写原因"};
         $.validator.setDefaults({
             submitHandler: function (form) {
-                var end = new Date($('#i_end').val());
-                var start = new Date($('#i_start').val());
+                var end = new Date($('#i_end').val().replace(/-/g, "/"));
+                var start = new Date($('#i_start').val().replace(/-/g, "/"));
                 if (end < start) {
                     alert("结束时间不能小于开始时间");
                     return;
@@ -27,7 +28,7 @@ define(function (require, exports, module) {
                 }
                 $('#form1').ajaxSubmit({
                     success: function () {
-                        history.go(-1);
+                        location.href = '/apply?r=' + Math.random();
                     }
                 });
             }
