@@ -26,7 +26,7 @@ public class test {
 
     public test() throws MalformedURLException {
         try {
-            password = new Des("B9A7942CB9").encrypt(MD5.encode("Gxfy12368"));
+            password = new Des("B9A7942CB9").encrypt(MD5.encode("123"));
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -39,8 +39,10 @@ public class test {
         Element root = doc.addElement("SMS");
         root.addAttribute("type", "sendSms");
         root.add(new Message("13299266512", "联通测试1").toElement());
-//        root.add(new Message("18172328353", "电信测试2").toElement());
-//        root.add(new Message("15778409992", "移动测试3").toElement());
+        root.add(new Message("18172328353", "电信测试2").toElement());
+        root.add(new Message("15778409992", "移动测试3").toElement());
+        root.add(new Message("13607813985", "移动测试3").toElement());
+        root.add(new Message("15977789915", "移动测试3").toElement());
         String result = port.mtSmsList(login_id, password, doc.asXML());
         System.out.println(result);
     }

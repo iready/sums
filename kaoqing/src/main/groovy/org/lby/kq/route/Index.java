@@ -36,6 +36,13 @@ public class Index extends Controller implements SysVar {
         setAttr("c", JsonKit.toJson(map));
     }
 
+    public void find() {
+        String s = getPara("tar", (String) getSessionAttr(EMAIL));
+        Object time_sta = getPara("start");
+        Object time_end = getPara("end");
+        renderJson(Salary.dao.find_1(s, time_sta, time_end));
+    }
+
     /**
      * 打卡
      */

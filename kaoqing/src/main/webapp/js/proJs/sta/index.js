@@ -37,7 +37,6 @@ define(function (require, exports, module) {
                     try {
                         layer.msg("请稍等，正在为您计算统计");
                     } catch (e) {
-                        console.log(e);
                     }
                     for (var i in arr) {
                         if (arr[i].name == 'i_days') {
@@ -78,7 +77,7 @@ define(function (require, exports, module) {
                 success: function (dat) {
                     day_init($('#year').val(), $('#month').val(), dat.day_max, dat.first_week);
                     if (json_cont.now_year == $('#year').val() && json_cont.now_month == $('#month').val()) {
-                        console.log(12);
+
                     }
                     $('#tr_d th:lt(5)').trigger('click');
                 }
@@ -155,7 +154,6 @@ define(function (require, exports, module) {
             try {
                 layer.msg("已选择本" + arr_unit[getUnitType()]);
             } catch (e) {
-                console.log(e);
             }
         }).trigger('click');
         $('#other_fy').unbind('click');
@@ -169,7 +167,7 @@ define(function (require, exports, module) {
                     selectedMulti: false
                 }, onEnd: function () {
                     set_unit(arguments[1], arguments[0])
-                }
+                }, email: login_user, systemMark: sysMark, permis: true
             });
         } else {
             $.openSelect('#other_fy', {
@@ -181,7 +179,7 @@ define(function (require, exports, module) {
                     selectedMulti: false
                 }, onEnd: function () {
                     set_unit(arguments[1], arguments[0])
-                }
+                }, email: login_user, systemMark: sysMark, permis: true
             });
         }
     }

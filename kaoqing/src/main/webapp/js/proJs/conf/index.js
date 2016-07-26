@@ -76,6 +76,7 @@ define(function (require, exports, module) {
             $('#hide_v').val('');
             $('#show_v').val('');
         }
+
         $('#radio_fy').click(function () {
             var c_ = $('#choose_').unbind('click').show(), h_ = $('#show_v'), panel_b = $('#show_div .panel-body').empty(), panel_show_div = $('#show_div');
             clean_selct();
@@ -93,7 +94,7 @@ define(function (require, exports, module) {
                     if (arguments[0]) {
                         ajax_yz(0, arguments[0], arguments[1]);
                     }
-                }
+                }, email: login_user, systemMark: sysMark, permis: true
             });
         });
         function ajax_yz(unitType, unit, name) {
@@ -125,7 +126,7 @@ define(function (require, exports, module) {
                     if (arguments[0]) {
                         ajax_yz(1, arguments[0], arguments[1]);
                     }
-                }
+                }, email: login_user, systemMark: sysMark, permis: true
             });
         });
         function bind_rever() {

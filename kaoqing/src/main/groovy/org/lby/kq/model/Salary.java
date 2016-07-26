@@ -3,6 +3,7 @@ package org.lby.kq.model;
 import com.jfinal.plugin.activerecord.Db;
 import com.jfinal.plugin.activerecord.Record;
 import org.lby.kq.model.base.BaseSalary;
+import org.zyq.core.lang.Str;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -62,4 +63,17 @@ public class Salary extends BaseSalary<Salary> {
         }
         return s;
     }
+
+    public List<Record> find_1(String userName, Object start, Object end) {
+        if (Str.isBlank((String) end)) {
+//            date(time_dj) = ?
+            return Db.find("SELECT ou.XM, sal.time_dj, sal.type,sel_time(kct.first,kct.second,kct.third,kct.fourth,kct.hcSb,kct.hcXb,sal.type,sal.time_dj) rr\n" +
+                    "FROM kq_salary sal LEFT JOIN org_user ou ON sal.yx = ou.YOUXIANG LEFT JOIN kq_config_time kct  on kct.id=sal.confid\n" +
+                    "WHERE sal.yx = ? AND date(sal.time_dj) = ?  ORDER BY date(sal.time_dj), sal.type", userName, start);
+        }
+        return Db.find("SELECT ou.XM, sal.time_dj, sal.type,sel_time(kct.first,kct.second,kct.third,kct.fourth,kct.hcSb,kct.hcXb,sal.type,sal.time_dj) rr\n" +
+                "FROM kq_salary sal LEFT JOIN org_user ou ON sal.yx = ou.YOUXIANG LEFT JOIN kq_config_time kct  on kct.id=sal.confid\n" +
+                "WHERE sal.yx = ? AND sal.time_dj BETWEEN ? AND ? ORDER BY date(sal.time_dj), sal.type", userName, start, end);
+    }
+
 }

@@ -1,3 +1,4 @@
+<%@ page import="org.lby.kq.common.SysVar" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <!DOCTYPE HTML>
 <html>

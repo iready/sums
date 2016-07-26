@@ -46,7 +46,7 @@ define(function (require, exports, module) {
             }, onEnd: function () {
                 $('#spr').val(arguments[0])
                 $('#div_s').text(arguments[1]);
-            }
+            }, email: login_user, systemMark: sysMark, permis: true
         });
     }
 });
