@@ -19,21 +19,21 @@ define(function (require, exports, module) {
         };
         p.init(option);
         for (var i = 0; i < obj['list'].length; i++) {
-            var obj1 = obj['list'][i], tr = b.new_tr();
+            var now = obj['list'][i], tr = b.new_tr();
             tr.append(b.new_td(p.getCount()))
-                .append(b.new_td(type[obj1.type]))
-                .append(b.new_td(obj1.sprxm))
-                .append(b.new_td(b.time_format(obj1.time_sq)).attr('title', obj1.time_sq))
+                .append(b.new_td(type[now.type]))
+                .append(b.new_td(now.sprxm))
+                .append(b.new_td(b.time_format(now.time_sq)).attr('title', now.time_sq))
                 .append(b.new_td().html(function () {
-                    return obj1.time_start + " 至<br/>" + obj1.time_end;
+                    return now.time_start + " 至<br/>" + now.time_end;
                 }()))
-                .append(b.new_td(b.sub_cont(obj1.reason, 10, "...")))
+                .append(b.new_td(b.sub_cont(now.reason, 10, "...")))
                 .append(b.new_td().html(function () {
-                    return b.new_span(obj1.state == 0 ? arr_state[0] : b.time_format(obj1.time_sp)).addClass(arr_state_color[obj1.state]).attr('title', obj1.time_sp);
+                    return b.new_span(now.state == 0 ? arr_state[0] : b.time_format(now.time_sp)).addClass(arr_state_color[now.state]).attr('title', now.time_sp);
                 }())).append(b.new_td().html(function () {
-                return b.new_span(obj1.state == 0 ? arr_state[0] : b.sub_cont(obj1.sp_reason, 10, "...")).attr('title', obj1.sp_reason).addClass(arr_state_color[obj1.state]);
+                return b.new_span(now.state == 0 ? arr_state[0] : b.sub_cont(now.sp_reason, 10, "...")).attr('title', now.sp_reason).addClass(arr_state_color[now.state]);
             }())).append(b.new_td().html(function () {
-                return b.new_span(arr_state[obj1.state]).addClass(arr_state_color[obj1.state]);
+                return b.new_span(arr_state[now.state]).addClass(arr_state_color[now.state]);
             }()));
             $('#tbody').append(tr);
         }

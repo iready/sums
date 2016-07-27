@@ -5,6 +5,7 @@ import com.jfinal.core.Controller;
 import com.jfinal.kit.JsonKit;
 import org.apache.log4j.Logger;
 import org.lby.kq.aop.Aop_Index;
+import org.lby.kq.common.CLZ;
 import org.lby.kq.common.SysVar;
 import org.lby.kq.model.ConfigTime;
 import org.lby.kq.model.Salary;
@@ -32,7 +33,7 @@ public class Index extends Controller implements SysVar {
 
     public void select() {
         Map<String, Object> map = new HashMap<>();
-        map.put("", "");
+        map.put("type", CLZ.apply_type);
         setAttr("c", JsonKit.toJson(map));
     }
 
@@ -40,7 +41,14 @@ public class Index extends Controller implements SysVar {
         String s = getPara("tar", (String) getSessionAttr(EMAIL));
         Object time_sta = getPara("start");
         Object time_end = getPara("end");
-        renderJson(Salary.dao.find_1(s, time_sta, time_end));
+        switch (getParaToInt("type", 0)) {
+            case 0:
+                renderJson(Salary.dao.find_1(s, time_sta, time_end));
+                break;
+            case 1:
+                renderJson(Salary.dao.find_2(s, time_sta, time_end));
+                break;
+        }
     }
 
     /**

@@ -8,7 +8,7 @@
     <jsp:include page="/WEB-INF/common/head.jsp"/>
     <script type="text/javascript">
         seajs.use('proJs/index/select', function (v) {
-            v.init();
+            v.init(${c});
         });
     </script>
 </head>
@@ -24,16 +24,18 @@
             </select>
             <div class="line">
                 <input type="hidden" id="hide_v"/>
-                <input type="hidden" id="show_v"/>
+                <input type="hidden" id="show_v" value="<%=session.getAttribute(SysVar.USER_NAME)%>"/>
                 <strong>查询目标：</strong>
                 <span class="text-gray" id="target"><%=session.getAttribute(SysVar.USER_NAME)%></span>
                 <input type="button" style="display: none" id="other" class="button btn-small" value="选择其他人"/>
             </div>
             <div>
                 <strong>时间范围: </strong>
-                <input id="i_start" onclick="laydate({format: 'YYYY-MM-DD'});" class="input input-auto" type="text" size="10"
+                <input id="i_start" onclick="laydate({format: 'YYYY-MM-DD'});" class="input input-auto" type="text"
+                       size="10"
                        readonly/>-
-                <input id="i_end" onclick="laydate({format: 'YYYY-MM-DD'});" class="input input-auto" type="text" size="10"
+                <input id="i_end" onclick="laydate({format: 'YYYY-MM-DD'});" class="input input-auto" type="text"
+                       size="10"
                        readonly/>
             </div>
             <input type="button" class="button bg-black" id="btn_sure" value="确定"/>
